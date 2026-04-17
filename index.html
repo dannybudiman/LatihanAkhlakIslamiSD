@@ -16,6 +16,7 @@
   --orange:#ff6b35; --orange-dark:#c84b00;
   --indigo:#5c6bc0; --indigo-dark:#3949ab;
   --emerald:#00897b; --emerald-dark:#00695c;
+  --amber:#f59e0b; --amber-dark:#b45309;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{font-size:17px;}
@@ -36,6 +37,7 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
 }
 .bab-btn.active-bab1{background:var(--teal);border-color:var(--teal);color:white;box-shadow:0 4px 14px rgba(0,180,216,0.5);}
 .bab-btn.active-bab2{background:var(--indigo);border-color:var(--indigo);color:white;box-shadow:0 4px 14px rgba(92,107,192,0.5);}
+.bab-btn.active-bab3{background:var(--emerald);border-color:var(--emerald);color:white;box-shadow:0 4px 14px rgba(0,137,123,0.5);}
 
 /* ===== HEADER ===== */
 .header{
@@ -44,6 +46,7 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
 }
 .header.bab1{background:linear-gradient(135deg,var(--teal-dark),var(--teal));}
 .header.bab2{background:linear-gradient(135deg,var(--indigo-dark),var(--indigo));}
+.header.bab3{background:linear-gradient(135deg,var(--emerald-dark),var(--emerald));}
 .header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 60%);animation:shimmer 4s ease-in-out infinite;}
 @keyframes shimmer{0%,100%{transform:translate(0,0);}50%{transform:translate(20px,-20px);}}
 .header h1{font-family:'Baloo 2',cursive;font-size:clamp(1.5rem,5vw,2.4rem);color:white;text-shadow:0 3px 10px rgba(0,0,0,0.2);position:relative;}
@@ -72,6 +75,7 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
 .materi-hero{border-radius:24px;padding:28px;color:white;text-align:center;margin-bottom:22px;position:relative;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,0.18);}
 .materi-hero.bab1-hero{background:linear-gradient(135deg,var(--teal-dark),var(--teal));}
 .materi-hero.bab2-hero{background:linear-gradient(135deg,var(--indigo-dark),var(--indigo));}
+.materi-hero.bab3-hero{background:linear-gradient(135deg,var(--emerald-dark),var(--emerald));}
 .materi-hero::after{content:'✨';position:absolute;font-size:100px;opacity:0.07;right:10px;top:50%;transform:translateY(-50%);}
 .materi-hero h2{font-family:'Baloo 2',cursive;font-size:1.6rem;margin-bottom:10px;}
 .materi-hero p{font-size:1rem;opacity:0.95;font-weight:600;}
@@ -146,6 +150,7 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
 .keutamaan-strip{display:flex;align-items:center;gap:14px;background:linear-gradient(90deg,var(--teal-dark),var(--teal));color:white;border-radius:16px;padding:14px 18px;margin:10px 0;}
 .keutamaan-strip.indigo-s{background:linear-gradient(90deg,var(--indigo-dark),var(--indigo));}
 .keutamaan-strip.green-s{background:linear-gradient(90deg,var(--emerald-dark),var(--emerald));}
+.keutamaan-strip.emerald-s{background:linear-gradient(90deg,var(--emerald-dark),var(--emerald));}
 .keutamaan-strip.orange-s{background:linear-gradient(90deg,var(--orange-dark),var(--orange));}
 .keutamaan-strip.purple-s{background:linear-gradient(90deg,#5b2075,#7b2d8b);}
 .kn{min-width:36px;height:36px;background:rgba(255,255,255,0.25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;font-family:'Baloo 2',cursive;}
@@ -176,6 +181,7 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
 .flashcard-back{transform:rotateY(180deg);color:white;box-shadow:0 10px 36px rgba(0,0,0,0.2);}
 .flashcard-back.bab1-back{background:linear-gradient(135deg,var(--teal-dark),var(--teal));}
 .flashcard-back.bab2-back{background:linear-gradient(135deg,var(--indigo-dark),var(--indigo));}
+.flashcard-back.bab3-back{background:linear-gradient(135deg,var(--emerald-dark),var(--emerald));}
 .flashcard-front .arabic{font-size:1.7rem;color:var(--gold-light);line-height:2.2;direction:rtl;}
 .flashcard-front .label{font-size:0.85rem;opacity:0.6;margin-bottom:10px;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;}
 .flashcard-front .term{font-size:1.3rem;font-family:'Baloo 2',cursive;color:white;margin-bottom:6px;}
@@ -188,6 +194,8 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
 .fc-btn.bab1-btn:hover{background:var(--teal-dark);}
 .fc-btn.bab2-btn{background:var(--indigo);box-shadow:0 4px 12px rgba(92,107,192,0.3);}
 .fc-btn.bab2-btn:hover{background:var(--indigo-dark);}
+.fc-btn.bab3-btn{background:var(--emerald);box-shadow:0 4px 12px rgba(0,137,123,0.3);}
+.fc-btn.bab3-btn:hover{background:var(--emerald-dark);}
 .fc-counter{font-weight:800;font-size:1.1rem;color:#555;}
 
 /* ===== QUIZ ===== */
@@ -223,6 +231,8 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
 .btn.bab1-btn:hover{background:var(--teal-dark);transform:translateY(-3px);}
 .btn.bab2-btn{background:var(--indigo);color:white;box-shadow:0 5px 14px rgba(92,107,192,0.35);}
 .btn.bab2-btn:hover{background:var(--indigo-dark);transform:translateY(-3px);}
+.btn.bab3-btn{background:var(--emerald);color:white;box-shadow:0 5px 14px rgba(0,137,123,0.35);}
+.btn.bab3-btn:hover{background:var(--emerald-dark);transform:translateY(-3px);}
 .btn.gold-btn{background:var(--gold);color:#1a1a00;box-shadow:0 5px 14px rgba(244,165,0,0.3);}
 .btn.gold-btn:hover{background:#c88c00;transform:translateY(-2px);}
 .btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;}
@@ -232,6 +242,7 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
 .result-badge.show{display:block;animation:popIn 0.5s ease;}
 .result-badge.bab1-badge{background:linear-gradient(135deg,var(--teal-dark),var(--teal));box-shadow:0 8px 28px rgba(0,119,182,0.3);}
 .result-badge.bab2-badge{background:linear-gradient(135deg,var(--indigo-dark),var(--indigo));box-shadow:0 8px 28px rgba(92,107,192,0.3);}
+.result-badge.bab3-badge{background:linear-gradient(135deg,var(--emerald-dark),var(--emerald));box-shadow:0 8px 28px rgba(0,137,123,0.3);}
 @keyframes popIn{0%{transform:scale(0.8);opacity:0;}100%{transform:scale(1);opacity:1;}}
 .result-emoji{font-size:3.2rem;margin-bottom:8px;}
 .result-score{font-family:'Baloo 2',cursive;font-size:2rem;}
@@ -271,6 +282,7 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
   <span>PILIH BAB:</span>
   <button class="bab-btn active-bab1" id="btn-bab1" onclick="switchBab(1,this)">😤 Bab 3 · Menahan Marah</button>
   <button class="bab-btn" id="btn-bab2" onclick="switchBab(2,this)">✅ Bab 4 · Hidup Jujur</button>
+  <button class="bab-btn" id="btn-bab3" onclick="switchBab(3,this)">🌙 Bab 5 · Puasa Ramadhan</button>
 </div>
 
 <!-- HEADER -->
@@ -297,6 +309,15 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
   <button class="tab-btn" onclick="showTab('b2-tugas1',this,'bab2-nav')">✏️ Tugas I</button>
   <button class="tab-btn" onclick="showTab('b2-tugas2',this,'bab2-nav')">📝 Tugas II</button>
   <button class="tab-btn" onclick="showTab('b2-wordmatch',this,'bab2-nav')">🔤 Tebak Kata</button>
+</div>
+
+<!-- NAV BAB 3 (Bab 5 Puasa) -->
+<div class="nav" id="nav-bab3" style="display:none">
+  <button class="tab-btn active" onclick="showTab('b3-materi',this,'bab3-nav')">📚 Materi</button>
+  <button class="tab-btn" onclick="showTab('b3-flashcard',this,'bab3-nav')">🃏 Flash Card</button>
+  <button class="tab-btn" onclick="showTab('b3-tugas1',this,'bab3-nav')">✏️ Tugas I</button>
+  <button class="tab-btn" onclick="showTab('b3-tugas2',this,'bab3-nav')">📝 Tugas II</button>
+  <button class="tab-btn" onclick="showTab('b3-wordmatch',this,'bab3-nav')">🔤 Tebak Kata</button>
 </div>
 
 <!-- ==================== BAB 1: MENAHAN MARAH ==================== -->
@@ -833,6 +854,261 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
 
 </div><!-- /bab2-world -->
 
+<!-- ==================== BAB 3: AKU SENANG BERPUASA ==================== -->
+<div id="bab3-world" class="bab-world">
+
+<!-- MATERI -->
+<div id="b3-materi" class="section active">
+  <div class="materi-hero bab3-hero">
+    <h2>🌙 Aku Senang Berpuasa</h2>
+    <p>Puasa Ramadhan — rukun Islam keempat yang penuh berkah 🌟</p>
+  </div>
+
+  <!-- A. ARTI PUASA -->
+  <div class="acc-card open" style="border-left-color:var(--emerald)" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title" style="color:var(--emerald-dark)">🌙 A. Arti Puasa</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Bulan Ramadhan adalah bulan yang penuh dengan barakah, yang segala kebaikan dan amal shalih dilipatgandakan pahalanya. Selama bulan Ramadhan umat Islam diwajibkan berpuasa dan dianjurkan melakukan banyak amal shalih karena di bulan ini Allah membuka pintu surga dan menutup rapat pintu neraka serta mengikat setan-setan yang biasa menggoda manusia.</p>
+      <p style="margin-top:10px">Puasa adalah rukun Islam yang keempat. Tidak sempurna Islam seseorang hingga dia melaksanakan 5 rukun Islam yang diwajibkan.</p>
+      <div class="hl-box teal" style="margin-top:14px">❓ <strong>Tahukah kalian apa arti puasa?</strong></div>
+      <div class="bubble-list" style="margin-top:14px">
+        <div class="bubble" style="background:#e8fff7;border-color:var(--emerald);color:var(--emerald-dark)">🌙 Shaum = Puasa (bahasa Arab)</div>
+        <div class="bubble" style="background:#e8fff7;border-color:var(--emerald);color:var(--emerald-dark)">🍽️ Menahan diri dari makan &amp; minum</div>
+        <div class="bubble" style="background:#e8fff7;border-color:var(--emerald);color:var(--emerald-dark)">⏰ Dari terbit fajar hingga terbenam matahari</div>
+        <div class="bubble" style="background:#e8fff7;border-color:var(--emerald);color:var(--emerald-dark)">🤲 Disertai niat khusus</div>
+        <div class="bubble red">📅 Puasa Ramadhan hukumnya wajib</div>
+      </div>
+      <div class="arabic-box" style="margin-top:16px">
+        <div class="arabic-src">QS. AL-BAQARAH: 183</div>
+        <div class="arabic-text" style="font-size:1.2rem">يَا أَيُّهَا الَّذِينَ آمَنُوا كُتِبَ عَلَيْكُمُ الصِّيَامُ كَمَا كُتِبَ عَلَى الَّذِينَ مِن قَبْلِكُمْ لَعَلَّكُمْ تَتَّقُونَ</div>
+        <div class="arabic-trans">"Wahai orang-orang yang beriman! Diwajibkan atas kamu berpuasa sebagaimana diwajibkan atas orang sebelum kamu agar kamu bertaqwa." [QS. Al-Baqarah: 183]</div>
+      </div>
+      <div class="bubble-list" style="margin-top:14px">
+        <div class="bubble" style="background:#fff9e6;border-color:var(--gold);color:#8a6200">🎯 Tujuan 1: Menyebutkan makna puasa dan keutamaannya</div>
+        <div class="bubble" style="background:#fff9e6;border-color:var(--gold);color:#8a6200">🎯 Tujuan 2: Menyebutkan cara berpuasa dan pembatalnya</div>
+        <div class="bubble" style="background:#fff9e6;border-color:var(--gold);color:#8a6200">🎯 Tujuan 3: Mempraktikkan puasa dengan benar</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B. KEUTAMAAN PUASA -->
+  <div class="acc-card gold" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">⭐ B. Keutamaan Puasa Ramadhan</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Ramadhan adalah bulan yang penuh keberkahan yang di dalamnya disyariatkan puasa. Keutamaan puasa Ramadhan bagi seorang muslim sangat banyak, antara lain sebagai berikut.</p>
+
+      <div class="keutamaan-strip" style="background:linear-gradient(90deg,var(--emerald-dark),var(--emerald));margin-top:14px">
+        <div class="kn">1</div><div class="kt">Puasa Membentuk Seseorang Menjadi Takwa</div>
+      </div>
+      <p>Allah Ta'ala berfirman dalam QS. Al-Baqarah: 183 bahwa tujuan puasa adalah agar kamu bertakwa.</p>
+
+      <div class="keutamaan-strip" style="background:linear-gradient(90deg,var(--emerald-dark),var(--emerald));margin-top:14px">
+        <div class="kn">2</div><div class="kt">Puasa merupakan Perisai bagi Seorang Muslim</div>
+      </div>
+      <p>Perisai artinya pelindung, yang bisa menangkis serangan.</p>
+      <div class="arabic-box">
+        <div class="arabic-text" style="font-size:1.3rem">الصَّوْمُ جُنَّةٌ</div>
+        <div class="arabic-trans">"Puasa adalah perisai." [HR. Bukhari dan Muslim]</div>
+      </div>
+
+      <div class="keutamaan-strip" style="background:linear-gradient(90deg,var(--emerald-dark),var(--emerald));margin-top:14px">
+        <div class="kn">3</div><div class="kt">Puasa Memasukkan Hamba ke Surga</div>
+      </div>
+      <p>Dalam hadits dikatakan, seorang sahabat berkata kepada Rasulullah ﷺ, "Wahai Rasulullah tunjukkan kepadaku suatu amalan yang bisa memasukkkanku ke dalam surga."</p>
+
+      <div class="keutamaan-strip" style="background:linear-gradient(90deg,var(--emerald-dark),var(--emerald));margin-top:14px">
+        <div class="kn">4</div><div class="kt">Puasa Menghapus Dosa yang Telah Lalu</div>
+      </div>
+      <div class="arabic-box">
+        <div class="arabic-text" style="font-size:1.1rem">مَنْ صَامَ رَمَضَانَ إِيمَانًا وَاحْتِسَابًا غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ</div>
+        <div class="arabic-trans">"Hendaklah engkau melaksanakan puasa karena tidak ada yang semisal dengannya." [HR. Nasaa-i, Ibnu Hibban dan Al-Hakim dishahihkan oleh Albani dalam Shahih Targhib wat Tarhib]</div>
+      </div>
+
+      <div class="keutamaan-strip" style="background:linear-gradient(90deg,var(--emerald-dark),var(--emerald));margin-top:14px">
+        <div class="kn">5</div><div class="kt">Puasa Menjauhkan Pelakunya dari Neraka</div>
+      </div>
+      <div class="arabic-box">
+        <div class="arabic-text" style="font-size:1.1rem">مَنْ صَامَ يَوْمًا فِي سَبِيلِ اللَّهِ بَاعَدَ اللَّهُ وَجْهَهُ عَنِ النَّارِ سَبْعِينَ خَرِيفًا</div>
+        <div class="arabic-trans">"Barang siapa melakukan puasa satu hari di jalan Allah (dalam ketaatan pada Allah), maka Allah akan menjauhkannya dari neraka sejauh perjalanan 70 tahun." [HR. Bukhari No. 2840]</div>
+      </div>
+
+      <div class="keutamaan-strip" style="background:linear-gradient(90deg,var(--emerald-dark),var(--emerald));margin-top:14px">
+        <div class="kn">6</div><div class="kt">Puasa Memberi Syafaat kepada Pelakunya pada Hari Kiamat</div>
+      </div>
+      <div class="arabic-box">
+        <div class="arabic-text" style="font-size:1.1rem">الصِّيَامُ وَالْقُرْآنُ يَشْفَعَانِ لِلْعَبْدِ يَوْمَ الْقِيَامَةِ</div>
+        <div class="arabic-trans">"Puasa dan Al-Quran akan memberikan syafaat pada hari kiamat. Puasa mengatakan 'Wahai Rabb-ku, aku menghalanginya dari makan dan nafsunya pada siang hari maka berilah ia syafaat karenaku.'"</div>
+      </div>
+
+      <div class="keutamaan-strip" style="background:linear-gradient(90deg,var(--emerald-dark),var(--emerald));margin-top:14px">
+        <div class="kn">7</div><div class="kt">Orang yang Berpuasa akan Masuk Surga dari Pintu Ar-Rayyan</div>
+      </div>
+      <div class="hadits-box" style="border-color:var(--emerald)">
+        <em>"Sesungguhnya, di surga ada pintu yang dinamakan Ar-Rayyan. Orang-orang yang berpuasa di hari kiamat masuk dari pintu itu. Tidak dibolehkan seorang pun memasukinya selain mereka. Lalu dikatakan, 'Di mana orang-orang yang berpuasa?' Mereka pun bangkit, tidak ada seorang pun yang masuk kecuali dari mereka. Ketika mereka telah masuk, (pintunya) ditutup dan tidak seorang pun masuk lagi."</em>
+        <div class="hadits-src">[HR. Bukhari, 1763. Muslim, 1947]</div>
+      </div>
+
+      <div class="keutamaan-strip" style="background:linear-gradient(90deg,var(--emerald-dark),var(--emerald));margin-top:14px">
+        <div class="kn">8</div><div class="kt">Pahala Orang Berpuasa Tidak Terbatas, Bau Mulutnya Lebih Wangi dari Kesturi</div>
+      </div>
+      <div class="arabic-box">
+        <div class="arabic-text" style="font-size:1rem">كُلُّ عَمَلِ ابْنِ آدَمَ لَهُ إِلَّا الصِّيَامَ فَإِنَّهُ لِي وَأَنَا أَجْزِي بِهِ وَالصِّيَامُ جُنَّةٌ</div>
+        <div class="arabic-trans">"Semua amalan bani adam adalah untuknya kecuali puasa. Karena puasa itu untuk-Ku dan Aku yang akan membalasnya. Dan puasa adalah perisai. Jika salah seorang dari kalian berpuasa maka janganlah ia berkata keji dan berteriak-teriak... Orang yang berpuasa mempunyai dua kegembiraan, ia bergembira ketika berbuka, dan ia bergembira ketika bertemu dengan rabb-nya." [HR. Bukhari dan Muslim]</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C. TATA CARA BERPUASA -->
+  <div class="acc-card green" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">📋 C. Tata Cara Berpuasa</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Berpuasa dilakukan dengan cara yang diajarkan oleh Rasulullah ﷺ, yaitu sebagai berikut.</p>
+      <div class="cloud-steps">
+        <div class="cloud-step">
+          <div class="cloud-num green">1</div>
+          <div class="cloud-bubble green">Berniat pada malam hari sampai sebelum subuh untuk puasa Ramadhan.</div>
+        </div>
+        <div class="cloud-step">
+          <div class="cloud-num green">2</div>
+          <div class="cloud-bubble green">Makan sahur pada saat sebelum terbit fajar subuh. Makan sahur disunnahkan untuk diakhirkan.</div>
+        </div>
+        <div class="cloud-step">
+          <div class="cloud-num green">3</div>
+          <div class="cloud-bubble green">Menahan diri dari makan, minum dan semua yang membatalkan puasa sejak terbit fajar shubuh hingga terbenam matahari saat maghrib.</div>
+        </div>
+        <div class="cloud-step">
+          <div class="cloud-num green">4</div>
+          <div class="cloud-bubble green">Memperbanyak amal shalih seperti shalat tarawih dan witir, shalat Dhuha, membaca Al-Quran, berdzikir, memberi makan berbuka atau sahur, menolong orang lain, bersedekah, dan lain sebagainya.</div>
+        </div>
+        <div class="cloud-step">
+          <div class="cloud-num green">5</div>
+          <div class="cloud-bubble green">Menjauhkan dari perbuatan dosa yang bisa mengurangi pahala puasa seperti berbohong, menghina, marah, berghibah, memukul teman dan lain sebagainya.</div>
+        </div>
+        <div class="cloud-step">
+          <div class="cloud-num green">6</div>
+          <div class="cloud-bubble green">Saat maghrib berbuka puasa disunnahkan makan 3 butir kurma. Jika tidak ada maka boleh dengan makanan yang lain.</div>
+        </div>
+        <div class="cloud-step">
+          <div class="cloud-num green">7</div>
+          <div class="cloud-bubble green">Buka puasa membaca doa berbuka puasa.</div>
+        </div>
+      </div>
+      <div class="arabic-box" style="margin-top:14px">
+        <div class="arabic-src">DOA BERBUKA PUASA</div>
+        <div class="arabic-text">ذَهَبَ الظَّمَأُ وَابْتَلَّتِ الْعُرُوقُ وَثَبَتَ الْأَجْرُ إِنْ شَاءَ اللَّهُ</div>
+        <div class="arabic-trans">"Telah hilang rasa haus dan urat-urat telah basah dan pahala telah tetap in syaa Allah."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D. PEMBATAL PUASA -->
+  <div class="acc-card pink" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">🚫 D. Pembatal-Pembatal Puasa</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Selama berpuasa, kita harus menjauhi perbuatan yang bisa menyebabkan puasa kita batal. Jika kita puasa Ramadhan lalu batal, maka kita wajib mengganti puasa di hari setelah Ramadhan berlalu. Beberapa hal yang membatalkan puasa antara lain:</p>
+      <div class="bubble-list" style="margin-top:16px">
+        <div class="bubble red">🍽️ Makan dengan sengaja</div>
+        <div class="bubble red">💧 Minum dengan sengaja</div>
+        <div class="bubble red">🤢 Muntah dengan sengaja</div>
+        <div class="bubble red">💉 Infus atau suntik yang mengandung nutrisi</div>
+        <div class="bubble red">🩸 Haid atau nifas bagi perempuan</div>
+        <div class="bubble red">😵 Gila atau hilang akal</div>
+        <div class="bubble red">🌅 Murtad (keluar dari Islam)</div>
+      </div>
+      <div class="hl-box green" style="margin-top:14px">💡 Jika puasa batal, wajib mengganti (qadha) di hari lain setelah Ramadhan!</div>
+    </div>
+  </div>
+</div><!-- /b3-materi -->
+
+<!-- FLASHCARD BAB 3 -->
+<div id="b3-flashcard" class="section">
+  <div class="card" style="border-left-color:var(--emerald)">
+    <h3 style="color:var(--emerald-dark)">🃏 Flash Card — Puasa Ramadhan</h3>
+    <p>Klik kartu untuk melihat artinya! Gunakan tombol panah untuk berpindah kartu.</p>
+  </div>
+  <div class="flashcard-container">
+    <div class="flashcard" id="b3-fc" onclick="flipFC(3)">
+      <div class="flashcard-front">
+        <div class="label">Istilah / Ayat</div>
+        <div class="arabic" id="b3-fc-front">الصَّوْمُ جُنَّةٌ</div>
+      </div>
+      <div class="flashcard-back bab3-back">
+        <div class="meaning" id="b3-fc-back">Puasa adalah perisai (pelindung).</div>
+        <div class="source" id="b3-fc-src">[HR. Bukhari dan Muslim]</div>
+      </div>
+    </div>
+  </div>
+  <p class="flip-hint">👆 Klik kartu untuk membalik</p>
+  <div class="fc-nav">
+    <button class="fc-btn bab3-btn" onclick="prevFC(3)">◀ Prev</button>
+    <span class="fc-counter" id="b3-fc-counter">1 / 6</span>
+    <button class="fc-btn bab3-btn" onclick="nextFC(3)">Next ▶</button>
+  </div>
+</div>
+
+<!-- TUGAS I BAB 3 -->
+<div id="b3-tugas1" class="section">
+  <div class="card" style="border-left-color:var(--emerald)">
+    <h3 style="color:var(--emerald-dark)">✏️ Tugas I — Pilihan Ganda</h3>
+    <p>Jawab semua pertanyaan, lalu klik <strong>Cek Jawaban</strong>!</p>
+  </div>
+  <div class="score-bar">
+    <span>📊 Progress</span>
+    <span class="score-val" style="color:var(--emerald)" id="b3-t1-score">0 / 5 dijawab</span>
+  </div>
+  <div id="b3-t1-container"></div>
+  <div class="btn-row">
+    <button class="btn bab3-btn" onclick="checkT1(3)">✅ Cek Jawaban</button>
+    <button class="btn gold-btn" onclick="resetT1(3)">🔄 Ulangi</button>
+  </div>
+  <div class="result-badge bab3-badge" id="b3-t1-result">
+    <div class="result-emoji" id="b3-t1-emoji">🏆</div>
+    <div class="result-score" id="b3-t1-final"></div>
+    <div class="result-msg" id="b3-t1-msg"></div>
+  </div>
+</div>
+
+<!-- TUGAS II BAB 3 -->
+<div id="b3-tugas2" class="section">
+  <div class="card" style="border-left-color:var(--emerald)">
+    <h3 style="color:var(--emerald-dark)">📝 Tugas II — Benar atau Salah?</h3>
+    <p>Tentukan apakah pernyataan berikut Benar (B) atau Salah (S)!</p>
+  </div>
+  <div class="score-bar">
+    <span>📊 Progress</span>
+    <span class="score-val" style="color:var(--emerald)" id="b3-t2-score">0 / 5 dijawab</span>
+  </div>
+  <div id="b3-t2-container"></div>
+  <div class="btn-row">
+    <button class="btn bab3-btn" onclick="checkT2(3)">✅ Cek Jawaban</button>
+    <button class="btn gold-btn" onclick="resetT2(3)">🔄 Ulangi</button>
+  </div>
+  <div class="result-badge bab3-badge" id="b3-t2-result">
+    <div class="result-emoji" id="b3-t2-emoji">🏆</div>
+    <div class="result-score" id="b3-t2-final"></div>
+    <div class="result-msg" id="b3-t2-msg"></div>
+  </div>
+</div>
+
+<!-- WORD MATCH BAB 3 -->
+<div id="b3-wordmatch" class="section">
+  <div class="card" style="border-left-color:var(--emerald)">
+    <h3 style="color:var(--emerald-dark)">🔤 Tebak Kata — Cocokkan!</h3>
+    <p>Pilih kata di <strong>KIRI</strong>, lalu klik kategori yang tepat di <strong>KANAN</strong>.</p>
+  </div>
+  <div id="b3-wm-container"></div>
+  <div class="btn-row">
+    <button class="btn bab3-btn" onclick="resetWM(3)">🔄 Ulangi</button>
+  </div>
+  <div class="result-badge bab3-badge" id="b3-wm-result">
+    <div class="result-emoji">🎊</div>
+    <div class="result-score" id="b3-wm-score"></div>
+    <div class="result-msg">Semua kata berhasil dicocokkan! Kamu luar biasa! 🌟</div>
+  </div>
+</div>
+
+</div><!-- /bab3-world -->
+
 <script>
 // ═══════════════════════════════════════════════
 // DATA
@@ -855,6 +1131,14 @@ var fcData = {
     { front:'Al-Amin', back:'Gelar yang diberikan kepada Rasulullah ﷺ sebelum menjadi nabi karena beliau selalu jujur dan dapat dipercaya.', src:'Sejarah Nabi', type:'term' },
     { front:'5 Manfaat Jujur', back:'1) Pahala meneladani Rasulullah ﷺ\n2) Dipercaya orang lain\n3) Membawa ke surga\n4) Disukai teman\n5) Ketenangan hati', src:'Bab Hidup Jujur', type:'term' },
     { front:'5 Bahaya Dusta', back:'1) Membawa ke neraka\n2) Tidak memiliki harga diri\n3) Tidak dipercaya\n4) Dijauhi teman\n5) Bisa menimbulkan sifat munafik', src:'Bab Hidup Jujur', type:'term' },
+  ],
+  3: [
+    { front:'الصَّوْمُ جُنَّةٌ', back:'Puasa adalah perisai (pelindung).', src:'[HR. Bukhari dan Muslim]', type:'arabic' },
+    { front:'الصِّيَامُ', back:'Ash-Shiyam = Puasa, menahan diri dari makan, minum, dan semua pembatal dari terbit fajar hingga terbenam matahari disertai niat.', src:'Kosakata Puasa', type:'arabic' },
+    { front:'يَا أَيُّهَا الَّذِينَ آمَنُوا كُتِبَ عَلَيْكُمُ الصِّيَامُ', back:'Wahai orang-orang yang beriman! Diwajibkan atas kamu berpuasa sebagaimana diwajibkan atas orang sebelum kamu agar kamu bertaqwa.', src:'[QS. Al-Baqarah: 183]', type:'arabic' },
+    { front:'Ar-Rayyan', back:'Nama pintu surga khusus untuk orang-orang yang berpuasa. Tidak ada yang boleh masuk dari pintu ini kecuali orang yang berpuasa.', src:'[HR. Bukhari dan Muslim]', type:'term' },
+    { front:'8 Keutamaan Puasa', back:'1) Membentuk ketakwaan\n2) Perisai bagi muslim\n3) Memasukkan ke surga\n4) Menghapus dosa lalu\n5) Menjauhkan dari neraka\n6) Memberi syafaat\n7) Masuk pintu Ar-Rayyan\n8) Pahala tak terbatas', src:'Bab Puasa Ramadhan', type:'term' },
+    { front:'ذَهَبَ الظَّمَأُ وَابْتَلَّتِ الْعُرُوقُ وَثَبَتَ الْأَجْرُ إِنْ شَاءَ اللَّهُ', back:'Telah hilang rasa haus dan urat-urat telah basah dan pahala telah tetap in syaa Allah. (Doa berbuka puasa)', src:'Doa Berbuka Puasa', type:'arabic' },
   ]
 };
 
@@ -873,6 +1157,13 @@ var t1Map = {
     { q:'Apa bahaya orang yang terbiasa berdusta menurut hadits?', opts:['Membawa kepada neraka','Membawa kepada surga'], ans:0 },
     { q:'Salah satu cara menjadi orang jujur adalah…', opts:['Berdoa kepada Allah agar dijadikan orang jujur','Tidak perlu usaha apapun'], ans:0 },
     { q:'Tanda orang munafik menurut HR. Bukhari adalah, KECUALI…', opts:['Jika berjanji dia menepati','Jika berjanji dia mengingkari'], ans:0 },
+  ],
+  3: [
+    { q:'Puasa adalah rukun Islam yang ke…', opts:['Tiga','Empat'], ans:1 },
+    { q:'Apa arti "الصَّوْمُ جُنَّةٌ" (Ash-shaumu junnatun)?', opts:['Puasa adalah perisai','Puasa adalah ibadah'], ans:0 },
+    { q:'Pintu surga khusus untuk orang yang berpuasa bernama…', opts:['Ar-Rayyan','Al-Firdaus'], ans:0 },
+    { q:'Saat berbuka puasa disunnahkan makan…', opts:['3 butir kurma','Nasi goreng'], ans:0 },
+    { q:'Hal yang MEMBATALKAN puasa adalah…', opts:['Makan dengan sengaja','Tidur siang'], ans:0 },
   ]
 };
 
@@ -891,6 +1182,13 @@ var t2Map = {
     { q:'Orang yang jujur akan dipercaya oleh orang lain.', opts:['Benar (B)','Salah (S)'], ans:0 },
     { q:'Dusta membawa kepada kebajikan dan surga.', opts:['Benar (B)','Salah (S)'], ans:1 },
     { q:'Salah satu cara menjadi jujur adalah mengingat bahwa Allah Maha Melihat perbuatan kita.', opts:['Benar (B)','Salah (S)'], ans:0 },
+  ],
+  3: [
+    { q:'Puasa Ramadhan hukumnya wajib bagi setiap muslim.', opts:['Benar (B)','Salah (S)'], ans:0 },
+    { q:'Makan sahur boleh dilakukan setelah terbit fajar subuh.', opts:['Benar (B)','Salah (S)'], ans:1 },
+    { q:'Orang yang berpuasa akan masuk surga dari pintu Ar-Rayyan.', opts:['Benar (B)','Salah (S)'], ans:0 },
+    { q:'Tidur siang pada saat puasa dapat membatalkan puasa.', opts:['Benar (B)','Salah (S)'], ans:1 },
+    { q:'Pahala puasa langsung diberikan oleh Allah tanpa batas.', opts:['Benar (B)','Salah (S)'], ans:0 },
   ]
 };
 
@@ -915,34 +1213,44 @@ var wmDataMap = {
     { word:'Neraka',           cat:'Bahaya Dusta' },
     { word:'Surga',            cat:'Manfaat Jujur' },
     { word:'Al-Quran',         cat:'Gelar Nabi' },
+  ],
+  3: [
+    { word:'Ar-Rayyan',        cat:'Keutamaan Puasa' },
+    { word:'Makan sengaja',    cat:'Pembatal Puasa' },
+    { word:'Minum sengaja',    cat:'Pembatal Puasa' },
+    { word:'Takwa',            cat:'Keutamaan Puasa' },
+    { word:'Niat',             cat:'Syarat Puasa' },
+    { word:'Sahur',            cat:'Syarat Puasa' },
+    { word:'Berbuka kurma',    cat:'Sunnah Puasa' },
+    { word:'Doa berbuka',      cat:'Sunnah Puasa' },
   ]
 };
 var wmCatMap = {
   1: ['Akhlak Terpuji','Akhlak Tercela','Wasiat Nabi','Cara Meredakan'],
-  2: ['Istilah Jujur','Istilah Dusta','Manfaat Jujur','Bahaya Dusta','Gelar Nabi']
+  2: ['Istilah Jujur','Istilah Dusta','Manfaat Jujur','Bahaya Dusta','Gelar Nabi'],
+  3: ['Keutamaan Puasa','Pembatal Puasa','Syarat Puasa','Sunnah Puasa']
 };
 
 // ═══════════════════════════════════════════════
 // STATE
 // ═══════════════════════════════════════════════
-var fcState  = { 1:{idx:0,flipped:false}, 2:{idx:0,flipped:false} };
-var t1State  = { 1:{ans:{},checked:false}, 2:{ans:{},checked:false} };
-var t2State  = { 1:{ans:{},checked:false}, 2:{ans:{},checked:false} };
-var wmState  = { 1:{sel:null,matched:{}}, 2:{sel:null,matched:{}} };
+var fcState  = { 1:{idx:0,flipped:false}, 2:{idx:0,flipped:false}, 3:{idx:0,flipped:false} };
+var t1State  = { 1:{ans:{},checked:false}, 2:{ans:{},checked:false}, 3:{ans:{},checked:false} };
+var t2State  = { 1:{ans:{},checked:false}, 2:{ans:{},checked:false}, 3:{ans:{},checked:false} };
+var wmState  = { 1:{sel:null,matched:{}}, 2:{sel:null,matched:{}}, 3:{sel:null,matched:{}} };
 
-var babColors = { 1:'var(--teal)', 2:'var(--indigo)' };
-var babBorder = { 1:'var(--teal-dark)', 2:'var(--indigo-dark)' };
+var babColors = { 1:'var(--teal)', 2:'var(--indigo)', 3:'var(--emerald)' };
+var babBorder = { 1:'var(--teal-dark)', 2:'var(--indigo-dark)', 3:'var(--emerald-dark)' };
 
 // ═══════════════════════════════════════════════
 // NAVIGATION
 // ═══════════════════════════════════════════════
 function switchBab(bab, btn) {
-  [1,2].forEach(function(b) {
+  [1,2,3].forEach(function(b) {
     var w = document.getElementById('bab'+b+'-world');
     var n = document.getElementById('nav-bab'+b);
     if (w) w.style.display = (b===bab)?'block':'none';
     if (n) n.style.display = (b===bab)?'flex':'none';
-    // Reset tab to Materi
     if (b===bab) {
       var sections = w.querySelectorAll('.section');
       sections.forEach(function(s){ s.classList.remove('active'); });
@@ -954,15 +1262,13 @@ function switchBab(bab, btn) {
     }
   });
 
-  // Update header
   var header = document.getElementById('main-header');
   header.className = 'header bab'+bab;
-  var titles = {1:'😤 Menahan Marah & Mudah Memaafkan', 2:'✅ Yuk, Hidup Jujur!'};
-  var badges = {1:'Bab III', 2:'Bab IV'};
+  var titles = {1:'😤 Menahan Marah & Mudah Memaafkan', 2:'✅ Yuk, Hidup Jujur!', 3:'🌙 Aku Senang Berpuasa'};
+  var badges = {1:'Bab III', 2:'Bab IV', 3:'Bab V'};
   document.getElementById('header-title').textContent = titles[bab];
   document.getElementById('bab-badge').textContent = badges[bab];
 
-  // Update btn
   document.querySelectorAll('.bab-btn').forEach(function(b){ b.className='bab-btn'; });
   btn.classList.add('active-bab'+bab);
 }
@@ -1247,7 +1553,7 @@ function resetWM(bab) {
 // INIT
 // ═══════════════════════════════════════════════
 window.addEventListener('DOMContentLoaded', function() {
-  [1,2].forEach(function(b){
+  [1,2,3].forEach(function(b){
     renderFC(b);
     renderT1(b);
     renderT2(b);

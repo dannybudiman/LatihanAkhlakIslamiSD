@@ -1,6 +1,6 @@
 # 🌙 Akhlak Islami — SD Kelas 1
 
-Aplikasi web interaktif untuk belajar Akhlak Islami Kelas 1 SD, mencakup Bab 3 dan Bab 4. Dirancang agar siswa bisa belajar mandiri dengan tampilan yang menarik, berwarna, dan responsif di desktop maupun mobile.
+Aplikasi web interaktif untuk belajar Akhlak Islami Kelas 1 SD, mencakup Bab 3, Bab 4, dan Bab 5. Dirancang agar siswa bisa belajar mandiri dengan tampilan yang menarik, berwarna, dan responsif di desktop maupun mobile.
 
 🔗 **[Buka Aplikasi — dannybudiman.github.io/LatihanAkhlakIslamiSD](https://dannybudiman.github.io/LatihanAkhlakIslamiSD/)**
 
@@ -31,6 +31,7 @@ Aplikasi web interaktif untuk belajar Akhlak Islami Kelas 1 SD, mencakup Bab 3 d
 |-----|-------|-----------|
 | Bab 3 | 😤 Menahan Marah & Mudah Memaafkan | Teal / Biru |
 | Bab 4 | ✅ Yuk, Hidup Jujur! | Indigo / Ungu Biru |
+| Bab 5 | 🌙 Aku Senang Berpuasa | Emerald / Hijau |
 
 ---
 
@@ -51,6 +52,12 @@ Penjelasan materi lengkap dalam format accordion yang bisa dibuka-tutup. Dilengk
 - 5 Bahaya Sifat Dusta
 - 7 Cara menjadi Orang Jujur
 
+**Bab 5 — Aku Senang Berpuasa:**
+- Arti Puasa (Shaum) + dalil QS. Al-Baqarah: 183
+- 8 Keutamaan Puasa Ramadhan (lengkap dengan hadits Arab)
+- 7 Tata Cara Berpuasa yang benar
+- Doa berbuka puasa + Pembatal-pembatal Puasa
+
 ### 🃏 Flash Card
 Kartu dalil dengan efek flip 3D. Sisi depan menampilkan ayat/dalil dalam tulisan Arab atau istilah, sisi belakang menampilkan arti dan penjelasan lengkap. Bisa dinavigasi maju-mundur. Tersedia **6 kartu per bab**.
 
@@ -65,6 +72,7 @@ Aktivitas mencocokkan kata/istilah ke kategori yang tepat. Pilih kata di kolom k
 
 - **Bab 3:** Mencocokkan kata ke kategori Akhlak Terpuji, Akhlak Tercela, Wasiat Nabi, Cara Meredakan
 - **Bab 4:** Mencocokkan kata ke kategori Istilah Jujur, Istilah Dusta, Manfaat Jujur, Bahaya Dusta, Gelar Nabi
+- **Bab 5:** Mencocokkan kata ke kategori Keutamaan Puasa, Pembatal Puasa, Syarat Puasa, Sunnah Puasa
 
 ---
 
