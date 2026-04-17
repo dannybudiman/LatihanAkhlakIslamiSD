@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akhlak Islami SD Kelas 1 🌙</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal:#00b4d8; --teal-dark:#0077b6;
+  --gold:#f4a500; --gold-light:#ffd166;
+  --green:#06d6a0; --green-dark:#00805e;
+  --purple:#7b2d8b; --purple-light:#c77dff;
+  --pink:#ef476f;
+  --sky:#e0f4ff; --text:#1a1a2e;
+  --orange:#ff6b35; --orange-dark:#c84b00;
+  --indigo:#5c6bc0; --indigo-dark:#3949ab;
+  --emerald:#00897b; --emerald-dark:#00695c;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{font-size:17px;}
+body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0%,#e8f5e9 50%,#fff9e6 100%);min-height:100vh;color:var(--text);}
+
+/* ===== BAB BAR ===== */
+.bab-bar{
+  background:linear-gradient(135deg,#1a1a2e,#16213e);
+  padding:10px 16px;
+  display:flex; gap:10px; justify-content:center; align-items:center; flex-wrap:wrap;
+  position:sticky; top:0; z-index:200;
+}
+.bab-bar span{color:rgba(255,255,255,0.45);font-size:0.8rem;font-weight:700;letter-spacing:1px}
+.bab-btn{
+  padding:9px 22px; border:2.5px solid rgba(255,255,255,0.2); border-radius:50px;
+  background:transparent; color:rgba(255,255,255,0.6);
+  font-family:'Nunito',sans-serif; font-weight:800; font-size:0.95rem; cursor:pointer; transition:all 0.3s;
+}
+.bab-btn.active-bab1{background:var(--teal);border-color:var(--teal);color:white;box-shadow:0 4px 14px rgba(0,180,216,0.5);}
+.bab-btn.active-bab2{background:var(--indigo);border-color:var(--indigo);color:white;box-shadow:0 4px 14px rgba(92,107,192,0.5);}
+
+/* ===== HEADER ===== */
+.header{
+  padding:26px 20px 22px; text-align:center; position:relative; overflow:hidden;
+  box-shadow:0 6px 24px rgba(0,0,0,0.2); transition:background 0.5s;
+}
+.header.bab1{background:linear-gradient(135deg,var(--teal-dark),var(--teal));}
+.header.bab2{background:linear-gradient(135deg,var(--indigo-dark),var(--indigo));}
+.header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 60%);animation:shimmer 4s ease-in-out infinite;}
+@keyframes shimmer{0%,100%{transform:translate(0,0);}50%{transform:translate(20px,-20px);}}
+.header h1{font-family:'Baloo 2',cursive;font-size:clamp(1.5rem,5vw,2.4rem);color:white;text-shadow:0 3px 10px rgba(0,0,0,0.2);position:relative;}
+.header p{color:rgba(255,255,255,0.92);font-size:1rem;margin-top:6px;position:relative;font-weight:600;}
+.bab-badge{display:inline-block;background:rgba(255,255,255,0.2);border:2px solid rgba(255,255,255,0.4);border-radius:50px;padding:4px 16px;font-size:0.85rem;font-weight:800;color:white;margin-top:8px;position:relative;}
+.stars{display:flex;justify-content:center;gap:10px;margin-top:8px;}
+.stars span{font-size:1.7rem;animation:bounce 1s ease-in-out infinite;}
+.stars span:nth-child(2){animation-delay:0.2s;}
+.stars span:nth-child(3){animation-delay:0.4s;}
+@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+
+/* ===== NAV TABS ===== */
+.nav{display:flex;overflow-x:auto;gap:8px;padding:12px 16px;background:white;box-shadow:0 3px 14px rgba(0,0,0,0.1);position:sticky;top:44px;z-index:99;scrollbar-width:none;}
+.nav::-webkit-scrollbar{display:none;}
+.tab-btn{flex-shrink:0;padding:10px 18px;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem;cursor:pointer;transition:all 0.3s;display:flex;align-items:center;gap:6px;background:#f0f4f8;color:#555;}
+.tab-btn.active{background:#1a1a2e;color:white;box-shadow:0 5px 14px rgba(0,0,0,0.25);transform:translateY(-2px);}
+.tab-btn:hover:not(.active){background:var(--sky);transform:translateY(-2px);}
+
+/* ===== SECTIONS ===== */
+.section{display:none;padding:20px 16px;max-width:860px;margin:0 auto;}
+.section.active{display:block;}
+.bab-world{display:none;}
+.bab-world.active{display:block;}
+
+/* ===== MATERI HERO ===== */
+.materi-hero{border-radius:24px;padding:28px;color:white;text-align:center;margin-bottom:22px;position:relative;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,0.18);}
+.materi-hero.bab1-hero{background:linear-gradient(135deg,var(--teal-dark),var(--teal));}
+.materi-hero.bab2-hero{background:linear-gradient(135deg,var(--indigo-dark),var(--indigo));}
+.materi-hero::after{content:'✨';position:absolute;font-size:100px;opacity:0.07;right:10px;top:50%;transform:translateY(-50%);}
+.materi-hero h2{font-family:'Baloo 2',cursive;font-size:1.6rem;margin-bottom:10px;}
+.materi-hero p{font-size:1rem;opacity:0.95;font-weight:600;}
+
+/* ===== ACCORDION ===== */
+.acc-card{background:white;border-radius:20px;margin-bottom:16px;box-shadow:0 5px 18px rgba(0,0,0,0.07);border-left:7px solid var(--teal);overflow:hidden;transition:box-shadow 0.2s;}
+.acc-card:hover{box-shadow:0 8px 24px rgba(0,0,0,0.12);}
+.acc-card.gold{border-left-color:var(--gold);}
+.acc-card.green{border-left-color:var(--green);}
+.acc-card.purple{border-left-color:var(--purple-light);}
+.acc-card.pink{border-left-color:var(--pink);}
+.acc-card.indigo{border-left-color:var(--indigo);}
+.acc-card.orange{border-left-color:var(--orange);}
+.acc-header{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;user-select:none;gap:12px;}
+.acc-title{font-family:'Baloo 2',cursive;font-size:1.15rem;color:var(--teal-dark);display:flex;align-items:center;gap:10px;flex:1;}
+.acc-card.gold .acc-title{color:#8a6200;}
+.acc-card.green .acc-title{color:var(--green-dark);}
+.acc-card.purple .acc-title{color:var(--purple);}
+.acc-card.pink .acc-title{color:#b52150;}
+.acc-card.indigo .acc-title{color:var(--indigo-dark);}
+.acc-card.orange .acc-title{color:var(--orange-dark);}
+.acc-chevron{font-size:1.2rem;transition:transform 0.35s;color:#bbb;flex-shrink:0;}
+.acc-card.open .acc-chevron{transform:rotate(180deg);color:var(--teal);}
+.acc-card.indigo.open .acc-chevron{color:var(--indigo);}
+.acc-body{max-height:0;overflow:hidden;transition:max-height 0.45s ease;padding:0 22px;}
+.acc-card.open .acc-body{max-height:2000px;padding:0 22px 22px;}
+.acc-body p{line-height:1.8;color:#333;font-size:1rem;}
+
+/* ===== CARDS ===== */
+.card{background:white;border-radius:20px;padding:22px;margin-bottom:18px;box-shadow:0 5px 18px rgba(0,0,0,0.07);border-left:7px solid var(--teal);transition:transform 0.2s,box-shadow 0.2s;}
+.card:hover{transform:translateY(-2px);}
+.card h3{font-family:'Baloo 2',cursive;font-size:1.15rem;color:var(--teal-dark);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.card p{line-height:1.8;color:#333;font-size:1rem;}
+.card.gold{border-left-color:var(--gold);}
+.card.gold h3{color:#8a6200;}
+.card.green{border-left-color:var(--green);}
+.card.green h3{color:var(--green-dark);}
+.card.indigo{border-left-color:var(--indigo);}
+.card.indigo h3{color:var(--indigo-dark);}
+.card.orange{border-left-color:var(--orange);}
+.card.orange h3{color:var(--orange-dark);}
+
+/* ===== NUMBERED POINT ===== */
+.num-point{display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,#e0f4ff,transparent);border-radius:14px;padding:10px 14px;margin-bottom:10px;}
+.num-badge{min-width:36px;height:36px;border-radius:50%;background:var(--teal);color:white;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',cursive;}
+.num-badge.gold{background:var(--gold);}
+.num-badge.indigo{background:var(--indigo);}
+.num-badge.green{background:var(--green);}
+.num-badge.orange{background:var(--orange);}
+.num-badge.purple{background:var(--purple);}
+.num-label{font-weight:800;color:var(--teal-dark);font-size:1rem;}
+.num-label.gold{color:#8a6200;}
+.num-label.indigo{color:var(--indigo-dark);}
+
+/* ===== BUBBLES ===== */
+.bubble-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;}
+.bubble{background:var(--sky);border:2.5px solid var(--teal);border-radius:24px;padding:7px 16px;font-size:0.92rem;font-weight:800;color:var(--teal-dark);}
+.bubble.gold{background:#fff9e6;border-color:var(--gold);color:#a07000;}
+.bubble.green{background:#e8fff7;border-color:var(--green);color:var(--green-dark);}
+.bubble.purple{background:#f3e8ff;border-color:var(--purple-light);color:var(--purple);}
+.bubble.indigo{background:#eef0fb;border-color:var(--indigo);color:var(--indigo-dark);}
+.bubble.orange{background:#fff3ee;border-color:var(--orange);color:var(--orange-dark);}
+.bubble.red{background:#fff0f3;border-color:var(--pink);color:#9b1a30;}
+
+/* ===== ARABIC BOX ===== */
+.arabic-box{background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:20px;padding:22px;text-align:center;margin:16px 0;color:white;box-shadow:0 6px 20px rgba(0,0,0,0.2);}
+.arabic-src{color:rgba(255,255,255,0.45);font-size:0.78rem;margin-bottom:8px;font-weight:700;letter-spacing:1px;}
+.arabic-text{font-size:1.6rem;line-height:2.4;color:var(--gold-light);direction:rtl;font-weight:600;}
+.arabic-trans{font-style:italic;color:rgba(255,255,255,0.85);font-size:0.95rem;margin-top:12px;line-height:1.8;}
+
+/* ===== KEUTAMAAN STRIP ===== */
+.keutamaan-strip{display:flex;align-items:center;gap:14px;background:linear-gradient(90deg,var(--teal-dark),var(--teal));color:white;border-radius:16px;padding:14px 18px;margin:10px 0;}
+.keutamaan-strip.indigo-s{background:linear-gradient(90deg,var(--indigo-dark),var(--indigo));}
+.keutamaan-strip.green-s{background:linear-gradient(90deg,var(--emerald-dark),var(--emerald));}
+.keutamaan-strip.orange-s{background:linear-gradient(90deg,var(--orange-dark),var(--orange));}
+.keutamaan-strip.purple-s{background:linear-gradient(90deg,#5b2075,#7b2d8b);}
+.kn{min-width:36px;height:36px;background:rgba(255,255,255,0.25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;font-family:'Baloo 2',cursive;}
+.kt{font-weight:800;font-size:1rem;}
+
+/* ===== CLOUD STEP ===== */
+.cloud-steps{display:flex;flex-direction:column;gap:14px;margin:16px 0;}
+.cloud-step{display:flex;align-items:flex-start;gap:14px;}
+.cloud-arrow{font-size:2.2rem;line-height:1;flex-shrink:0;margin-top:4px;}
+.cloud-bubble{background:var(--sky);border:2.5px solid var(--teal);border-radius:24px;padding:12px 18px;font-size:0.95rem;font-weight:700;color:var(--teal-dark);line-height:1.6;}
+.cloud-bubble.indigo{background:#eef0fb;border-color:var(--indigo);color:var(--indigo-dark);}
+.cloud-bubble.gold{background:#fff9e6;border-color:var(--gold);color:#8a6200;}
+.cloud-bubble.orange{background:#fff3ee;border-color:var(--orange);color:var(--orange-dark);}
+.cloud-bubble.dark{background:#2d2d44;border-color:#555;color:#ddd;}
+.cloud-bubble.red{background:#fff0f3;border-color:var(--pink);color:#9b1a30;}
+.cloud-num{min-width:28px;height:28px;background:var(--teal);border-radius:50%;color:white;font-weight:800;font-size:0.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.cloud-num.indigo{background:var(--indigo);}
+.cloud-num.gold{background:var(--gold);}
+.cloud-num.dark{background:#333;}
+.cloud-num.red{background:var(--pink);}
+
+/* ===== FLASHCARD ===== */
+.flashcard-container{perspective:1200px;margin:20px 0;}
+.flashcard{width:100%;min-height:280px;position:relative;transform-style:preserve-3d;transition:transform 0.6s;cursor:pointer;}
+.flashcard.flipped{transform:rotateY(180deg);}
+.flashcard-front,.flashcard-back{position:absolute;width:100%;min-height:280px;backface-visibility:hidden;border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px;text-align:center;}
+.flashcard-front{background:linear-gradient(135deg,#16213e,#0f3460);color:white;box-shadow:0 10px 36px rgba(0,0,0,0.25);}
+.flashcard-back{transform:rotateY(180deg);color:white;box-shadow:0 10px 36px rgba(0,0,0,0.2);}
+.flashcard-back.bab1-back{background:linear-gradient(135deg,var(--teal-dark),var(--teal));}
+.flashcard-back.bab2-back{background:linear-gradient(135deg,var(--indigo-dark),var(--indigo));}
+.flashcard-front .arabic{font-size:1.7rem;color:var(--gold-light);line-height:2.2;direction:rtl;}
+.flashcard-front .label{font-size:0.85rem;opacity:0.6;margin-bottom:10px;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;}
+.flashcard-front .term{font-size:1.3rem;font-family:'Baloo 2',cursive;color:white;margin-bottom:6px;}
+.flashcard-back .meaning{font-size:1rem;line-height:1.8;}
+.flashcard-back .source{font-size:0.88rem;opacity:0.75;margin-top:12px;font-weight:700;}
+.flip-hint{text-align:center;color:#777;font-size:0.92rem;margin-top:10px;font-weight:600;}
+.fc-nav{display:flex;justify-content:center;align-items:center;gap:20px;margin-top:18px;}
+.fc-btn{border:none;border-radius:50px;padding:12px 24px;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.95rem;cursor:pointer;transition:all 0.2s;color:white;}
+.fc-btn.bab1-btn{background:var(--teal);box-shadow:0 4px 12px rgba(0,180,216,0.3);}
+.fc-btn.bab1-btn:hover{background:var(--teal-dark);}
+.fc-btn.bab2-btn{background:var(--indigo);box-shadow:0 4px 12px rgba(92,107,192,0.3);}
+.fc-btn.bab2-btn:hover{background:var(--indigo-dark);}
+.fc-counter{font-weight:800;font-size:1.1rem;color:#555;}
+
+/* ===== QUIZ ===== */
+.quiz-card{background:white;border-radius:22px;padding:24px;box-shadow:0 5px 22px rgba(0,0,0,0.08);margin-bottom:18px;}
+.quiz-q{font-family:'Baloo 2',cursive;font-size:1.15rem;margin-bottom:16px;line-height:1.6;color:var(--teal-dark);}
+.quiz-q.bab2{color:var(--indigo-dark);}
+.quiz-options{display:flex;flex-direction:column;gap:10px;}
+.quiz-opt{border:2.5px solid #e0e0e0;border-radius:14px;padding:13px 18px;cursor:pointer;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.97rem;text-align:left;background:white;transition:all 0.2s;color:var(--text);}
+.quiz-opt:hover:not(:disabled){border-color:var(--teal);background:var(--sky);transform:translateX(4px);}
+.quiz-opt.bab2-opt:hover:not(:disabled){border-color:var(--indigo);background:#eef0fb;}
+.quiz-opt.correct{border-color:var(--green);background:#e8fff7;color:#005a42;}
+.quiz-opt.wrong{border-color:var(--pink);background:#fff0f3;color:#9b1a30;}
+.quiz-opt:disabled{cursor:default;}
+.quiz-feedback{margin-top:12px;padding:11px 16px;border-radius:12px;font-weight:700;font-size:0.93rem;display:none;}
+.quiz-feedback.show{display:block;}
+.quiz-feedback.correct{background:#e8fff7;color:#005a42;border:2.5px solid var(--green);}
+.quiz-feedback.wrong{background:#fff0f3;color:#9b1a30;border:2.5px solid var(--pink);}
+.score-bar{display:flex;align-items:center;justify-content:space-between;background:white;border-radius:50px;padding:12px 22px;margin-bottom:18px;box-shadow:0 3px 12px rgba(0,0,0,0.07);font-weight:800;font-size:1rem;}
+.score-val{font-size:1.2rem;color:var(--teal);}
+.score-val.bab2{color:var(--indigo);}
+
+/* ===== WORD MATCH ===== */
+.match-item{padding:13px 14px;border-radius:14px;border:2.5px solid #ddd;background:#f9f9f9;cursor:pointer;font-weight:800;font-size:0.93rem;text-align:center;transition:all 0.2s;}
+.match-item:hover{transform:scale(1.04);}
+.match-item.selected{border-color:var(--gold);background:#fff9e6;color:#8a6200;}
+.match-item.matched{border-color:var(--green);background:#e8fff7;color:#005a42;cursor:default;}
+.match-item.wrong-flash{border-color:var(--pink);background:#fff0f3;animation:shake 0.4s;}
+@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-8px);}75%{transform:translateX(8px);}}
+
+/* ===== BTN ===== */
+.btn{border:none;border-radius:50px;padding:13px 28px;font-family:'Nunito',sans-serif;font-weight:800;font-size:1rem;cursor:pointer;transition:all 0.2s;}
+.btn.bab1-btn{background:var(--teal);color:white;box-shadow:0 5px 14px rgba(0,180,216,0.35);}
+.btn.bab1-btn:hover{background:var(--teal-dark);transform:translateY(-3px);}
+.btn.bab2-btn{background:var(--indigo);color:white;box-shadow:0 5px 14px rgba(92,107,192,0.35);}
+.btn.bab2-btn:hover{background:var(--indigo-dark);transform:translateY(-3px);}
+.btn.gold-btn{background:var(--gold);color:#1a1a00;box-shadow:0 5px 14px rgba(244,165,0,0.3);}
+.btn.gold-btn:hover{background:#c88c00;transform:translateY(-2px);}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;}
+
+/* ===== RESULT BADGE ===== */
+.result-badge{display:none;text-align:center;padding:28px 22px;border-radius:24px;color:white;margin-top:18px;}
+.result-badge.show{display:block;animation:popIn 0.5s ease;}
+.result-badge.bab1-badge{background:linear-gradient(135deg,var(--teal-dark),var(--teal));box-shadow:0 8px 28px rgba(0,119,182,0.3);}
+.result-badge.bab2-badge{background:linear-gradient(135deg,var(--indigo-dark),var(--indigo));box-shadow:0 8px 28px rgba(92,107,192,0.3);}
+@keyframes popIn{0%{transform:scale(0.8);opacity:0;}100%{transform:scale(1);opacity:1;}}
+.result-emoji{font-size:3.2rem;margin-bottom:8px;}
+.result-score{font-family:'Baloo 2',cursive;font-size:2rem;}
+.result-msg{font-size:1rem;opacity:0.95;margin-top:6px;font-weight:700;}
+
+/* ===== HADITS INLINE ===== */
+.hadits-box{background:#f0f8ff;border-left:5px solid var(--teal);border-radius:12px;padding:14px 18px;margin:12px 0;font-style:italic;color:#1a3a4a;font-size:0.95rem;line-height:1.8;}
+.hadits-box.indigo{background:#eef0fb;border-left-color:var(--indigo);color:#1a1f50;}
+.hadits-src{font-size:0.85rem;font-weight:800;margin-top:6px;font-style:normal;color:#555;}
+
+/* ===== HIGHLIGHT BOX ===== */
+.hl-box{border-radius:16px;padding:16px 20px;margin:12px 0;font-weight:700;font-size:1rem;line-height:1.7;}
+.hl-box.teal{background:#e0f4ff;border:2px solid var(--teal);color:var(--teal-dark);}
+.hl-box.green{background:#e8fff7;border:2px solid var(--green);color:var(--green-dark);}
+.hl-box.gold{background:#fff9e6;border:2px solid var(--gold);color:#8a6200;}
+.hl-box.pink{background:#fff0f3;border:2px solid var(--pink);color:#9b1a30;}
+.hl-box.indigo{background:#eef0fb;border:2px solid var(--indigo);color:var(--indigo-dark);}
+
+/* ===== DAFTAR LIST ===== */
+.daftar{margin:10px 0 0 0;padding-left:20px;}
+.daftar li{margin-bottom:9px;line-height:1.7;color:#333;font-size:0.97rem;}
+
+/* ===== SECTION HEADING ===== */
+.sec-heading{display:flex;align-items:center;gap:10px;padding:8px 0 4px;border-bottom:2px solid var(--sky);margin:20px 0 14px;}
+.sec-heading h3{font-family:'Baloo 2',cursive;font-size:1.2rem;color:var(--teal-dark);}
+.sec-heading.indigo h3{color:var(--indigo-dark);}
+
+/* ===== CERITA / NARASI ===== */
+.narasi{background:white;border-radius:20px;padding:22px;margin-bottom:18px;box-shadow:0 5px 18px rgba(0,0,0,0.07);}
+.narasi p{line-height:1.9;color:#333;font-size:0.98rem;}
+</style>
+</head>
+<body>
+
+<!-- BAB BAR -->
+<div class="bab-bar">
+  <span>PILIH BAB:</span>
+  <button class="bab-btn active-bab1" id="btn-bab1" onclick="switchBab(1,this)">😤 Bab 3 · Menahan Marah</button>
+  <button class="bab-btn" id="btn-bab2" onclick="switchBab(2,this)">✅ Bab 4 · Hidup Jujur</button>
+</div>
+
+<!-- HEADER -->
+<div class="header bab1" id="main-header">
+  <h1 id="header-title">😤 Menahan Marah & Mudah Memaafkan</h1>
+  <p id="header-sub">Akhlak Islami — SD Kelas 1</p>
+  <div class="bab-badge" id="bab-badge">Bab III</div>
+  <div class="stars"><span>⭐</span><span>🌙</span><span>⭐</span></div>
+</div>
+
+<!-- NAV BAB 1 -->
+<div class="nav" id="nav-bab1">
+  <button class="tab-btn active" onclick="showTab('b1-materi',this,'bab1-nav')">📚 Materi</button>
+  <button class="tab-btn" onclick="showTab('b1-flashcard',this,'bab1-nav')">🃏 Flash Card</button>
+  <button class="tab-btn" onclick="showTab('b1-tugas1',this,'bab1-nav')">✏️ Tugas I</button>
+  <button class="tab-btn" onclick="showTab('b1-tugas2',this,'bab1-nav')">📝 Tugas II</button>
+  <button class="tab-btn" onclick="showTab('b1-wordmatch',this,'bab1-nav')">🔤 Tebak Kata</button>
+</div>
+
+<!-- NAV BAB 2 -->
+<div class="nav" id="nav-bab2" style="display:none">
+  <button class="tab-btn active" onclick="showTab('b2-materi',this,'bab2-nav')">📚 Materi</button>
+  <button class="tab-btn" onclick="showTab('b2-flashcard',this,'bab2-nav')">🃏 Flash Card</button>
+  <button class="tab-btn" onclick="showTab('b2-tugas1',this,'bab2-nav')">✏️ Tugas I</button>
+  <button class="tab-btn" onclick="showTab('b2-tugas2',this,'bab2-nav')">📝 Tugas II</button>
+  <button class="tab-btn" onclick="showTab('b2-wordmatch',this,'bab2-nav')">🔤 Tebak Kata</button>
+</div>
+
+<!-- ==================== BAB 1: MENAHAN MARAH ==================== -->
+<div id="bab1-world" class="bab-world active">
+
+<!-- MATERI -->
+<div id="b1-materi" class="section active">
+  <div class="materi-hero bab1-hero">
+    <h2>😤 Menahan Marah & Mudah Memaafkan</h2>
+    <p>Akhlak mulia yang dicintai Allah 💙 Klik kartu untuk membuka materi</p>
+  </div>
+
+  <!-- PENGANTAR -->
+  <div class="acc-card open" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">🌟 Pengantar — Mengapa Kita Harus Berakhlak Mulia?</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Anak-anakku yang shalih dan shalihah, seorang muslim hendaknya memiliki akhlak yang mulia agar dicintai oleh Allah dan manusia. Dalam pergaulan sehari-hari dibutuhkan akhlak yang mulia agar hubungan sesama manusia senantiasa rukun dan damai.</p>
+      <p style="margin-top:10px">Di antara akhlak yang mulia adalah sikap <strong>menahan marah</strong> dan <strong>memaafkan</strong>. Bahkan menahan marah dan memaafkan adalah 2 ciri di antara beberapa ciri orang bertakwa penghuni surga. Allah Ta'ala berfirman:</p>
+      <div class="arabic-box">
+        <div class="arabic-src">QS. ALI IMRAN: 133–134</div>
+        <div class="arabic-text" style="font-size:1.25rem">وَسَارِعُوا إِلَىٰ مَغْفِرَةٍ مِّن رَّبِّكُمْ وَجَنَّةٍ عَرْضُهَا السَّمَاوَاتُ وَالْأَرْضُ أُعِدَّتْ لِلْمُتَّقِينَ ۝ الَّذِينَ يُنفِقُونَ فِي السَّرَّاءِ وَالضَّرَّاءِ وَالْكَاظِمِينَ الْغَيْظَ وَالْعَافِينَ عَنِ النَّاسِ وَاللَّهُ يُحِبُّ الْمُحْسِنِينَ</div>
+        <div class="arabic-trans">"Dan bersegeralah kamu kepada ampunan dari Tuhanmu dan kepada surga yang luasnya seluas langit dan bumi yang disediakan untuk orang-orang yang bertakwa, (yaitu) orang-orang yang menafkahkan (hartanya), baik di waktu lapang maupun yang sempit, dan orang-orang yang menahan amarahnya dan memaafkan (kesalahan) orang. Allah menyukai orang-orang yang berbuat kebajikan." [QS. Ali Imran: 133-134]</div>
+      </div>
+      <div class="bubble-list">
+        <div class="bubble">🎯 Tujuan Pembelajaran</div>
+      </div>
+      <ol class="daftar" style="margin-top:12px">
+        <li>Menyebutkan keutamaan sifat mudah memaafkan dan menahan marah serta dalilnya.</li>
+        <li>Menyebutkan cara agar mudah memaafkan dan cara meredakan marah.</li>
+        <li>Mempraktikkan sifat menahan marah dan mudah memaafkan dalam keseharian.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- A. MENAHAN MARAH -->
+  <div class="acc-card gold" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">😡 A. Menahan Amarah dan Keutamaannya</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Rasa marah adalah hal yang biasa timbul pada diri kita saat ada yang menyakiti hati atau badan kita. Namun walaupun marah adalah hal yang biasa terjadi pada diri manusia, kita sebagai orang yang beriman tidak boleh menuruti hawa nafsu untuk marah.</p>
+      <p style="margin-top:10px">Marah disebabkan oleh bisikan setan yang membisikkan agar marah dan tidak sabar sehingga ia mudah emosi, dan terkadang ucapan dan tindakannya tidak masuk akal. Marah banyak sekali menimbulkan perbuatan yang diharamkan seperti berteriak, memukul, melempar barang, menyiksa, menyakiti orang, dan mengeluarkan perkataan-perkataan yang diharamkan seperti menuduh, mencaci maki, berkata kotor, bahkan sampai membunuh ataupun kufur.</p>
+      <div class="arabic-box" style="margin-top:14px">
+        <div class="arabic-src">HR. AL-BUKHARI</div>
+        <div class="arabic-text" style="font-size:1.2rem">عَنْ أَبِي هُرَيْرَةَ رَضِيَ اللَّهُ عَنْهُ أَنَّ رَجُلًا قَالَ لِلنَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ أَوْصِنِي قَالَ لَا تَغْضَبْ</div>
+        <div class="arabic-trans">"Dari Abu Hurairah Radhiyallahu anhu bahwa ada seorang laki-laki berkata kepada Nabi ﷺ, 'Berilah aku wasiat.' Beliau menjawab, 'Janganlah engkau marah!' Orang itu mengulangi permintaannya berulang-ulang, kemudian Nabi ﷺ bersabda, 'Janganlah engkau marah!'"</div>
+      </div>
+
+      <div class="sec-heading"><h3>⭐ Keutamaan Menahan Amarah</h3></div>
+
+      <div class="keutamaan-strip">
+        <div class="kn">1</div>
+        <div class="kt">Akan Masuk Surga</div>
+      </div>
+      <p>Rasulullah ﷺ menjanjikan surga bagi orang yang mampu menahan marah. Nabi ﷺ bersabda:</p>
+      <div class="arabic-box">
+        <div class="arabic-text">لَا تَغْضَبْ وَلَكَ الْجَنَّةُ</div>
+        <div class="arabic-trans">"Janganlah kamu marah, maka bagimu surga." [HR. Thabrani dan dishahihkan oleh Al-Albani dalam Sahih Targhib wat Tarhib]</div>
+      </div>
+
+      <div class="keutamaan-strip" style="margin-top:14px">
+        <div class="kn">2</div>
+        <div class="kt">Orang yang Mampu Menahan Marah Adalah Orang yang Kuat</div>
+      </div>
+      <p>Orang yang kuat bukanlah orang yang pandai bergelut. Yang kuat, itulah yang kuat menahan marahnya. Dari Abu Hurairah radhiyallahu 'anhu, Nabi ﷺ bersabda:</p>
+      <div class="arabic-box">
+        <div class="arabic-text" style="font-size:1.1rem">لَيْسَ الشَّدِيدُ بِالصُّرَعَةِ، إِنَّمَا الشَّدِيدُ الَّذِي يَمْلِكُ نَفْسَهُ عِنْدَ الْغَضَبِ</div>
+        <div class="arabic-trans">"Yang namanya kuat bukanlah dengan pandai bergelut. Yang disebut kuat adalah yang dapat menguasai dirinya ketika marah." [HR. Bukhari, No. 6114; Muslim, No. 2609]</div>
+      </div>
+
+      <div class="keutamaan-strip" style="margin-top:14px">
+        <div class="kn">3</div>
+        <div class="kt">Akan Memiliki Bidadari di Surga</div>
+      </div>
+      <p>Nabi ﷺ bersabda:</p>
+      <div class="arabic-box">
+        <div class="arabic-text" style="font-size:1.1rem">مَنْ كَظَمَ غَيْظًا — وَهُوَ قَادِرٌ عَلَى أَنْ يُنْفِذَهُ — دَعَاهُ اللَّهُ عَزَّ وَجَلَّ عَلَى رُؤُوسِ الْخَلَائِقِ يَوْمَ الْقِيَامَةِ حَتَّى يُخَيِّرَهُ اللَّهُ مِنَ الْحُورِ مَا شَاءَ</div>
+        <div class="arabic-trans">"Siapa yang dapat menahan marahnya padahal ia mampu untuk meluapkannya, maka Allah akan memanggilnya di hadapan para makhluk pada hari kiamat sehingga orang itu memilih bidadari cantik sesuka hatinya." [HR. Abu Daud No. 4777 dan Ibnu Majah No. 4186]</div>
+      </div>
+
+      <div class="keutamaan-strip" style="margin-top:14px">
+        <div class="kn">4</div>
+        <div class="kt">Disukai oleh Allah</div>
+      </div>
+      <div class="arabic-box">
+        <div class="arabic-text" style="font-size:1.1rem">وَالْكَاظِمِينَ الْغَيْظَ وَالْعَافِينَ عَنِ النَّاسِ وَاللَّهُ يُحِبُّ الْمُحْسِنِينَ</div>
+        <div class="arabic-trans">"Dan orang-orang yang menahan amarahnya serta memaafkan (kesalahan) orang lain. Allah menyukai orang-orang yang berbuat kebajikan." [QS. Ali 'Imran: 134]</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B. CARA MEREDAKAN MARAH -->
+  <div class="acc-card green" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">🧊 B. Cara Meredakan Marah</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Rasulullah ﷺ memberi petunjuk kepada orang yang sedang marah untuk melakukan hal-hal yang bisa meredakan kemarahan. Di antara hal-hal yang dapat dilakukan untuk menahan amarah adalah sebagai berikut.</p>
+
+      <div class="cloud-steps">
+        <div class="cloud-step">
+          <div class="cloud-num">1</div>
+          <div class="cloud-bubble"><strong>Berlindung kepada Allah Ta'ala</strong> dari godaan setan dengan mengucapkan:</div>
+        </div>
+      </div>
+      <div class="arabic-box">
+        <div class="arabic-text">أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ</div>
+        <div class="arabic-trans"><em>Aku berlindung kepada Allah dari godaan setan yang terkutuk.</em></div>
+      </div>
+
+      <div class="cloud-steps">
+        <div class="cloud-step">
+          <div class="cloud-num">2</div>
+          <div class="cloud-bubble"><strong>Diam (tidak berbicara)</strong>, agar terhindar dari ucapan-ucapan buruk yang timbul ketika orang sedang marah.<br><br>
+          <em style="color:#555;font-size:0.9rem">"Jika salah seorang dari kalian marah maka hendaknya dia diam." [HR. Ahmad dan Al-Bukhari dalam Al-Adabul Mufrad]</em></div>
+        </div>
+        <div class="cloud-step">
+          <div class="cloud-num">3</div>
+          <div class="cloud-bubble"><strong>Mengubah posisinya dengan duduk atau berbaring</strong>, agar kemarahan tertahan dan tidak berakibat buruk.<br><br>
+          <em style="color:#555;font-size:0.9rem">"Apabila kalian marah, dan dalam posisi berdiri, hendaknya dia duduk. Karena dengan itu marahnya bisa hilang. Jika belum juga hilang, hendak dia mengambil posisi tidur." [HR. Ahmad; Abu Daud; dishahihkan oleh Syuaib Al-Arnauth]</em></div>
+        </div>
+        <div class="cloud-step">
+          <div class="cloud-num">4</div>
+          <div class="cloud-bubble"><strong>Berusaha untuk menahan dan mengendalikan diri</strong> ketika sedang marah.<br><br>
+          <em style="color:#555;font-size:0.9rem">"Berilah aku wasiat." Beliau menjawab, "Janganlah engkau marah." Lelaki itu mengulangi permintaannya, (selalu) Nabi ﷺ menjawab, "Janganlah engkau marah." [HR. Bukhari No. 6116]</em></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C. MUDAH MEMAAFKAN -->
+  <div class="acc-card purple" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">💜 C. Mudah Memaafkan dan Keutamaannya</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Dalam pergaulan sehari-hari terkadang ada teman yang menyakiti perasaan atau tubuh kita, baik dengan perkataan atau perbuatan. Di antara akhlak yang mulia adalah mudah memaafkan orang lain, yaitu mudahkan memaafkan orang yang menyakiti kita dan tidak membalas kejahatannya.</p>
+      <p style="margin-top:10px">Memaafkan itu lebih utama dari sekedar menahan amarah. Memaafkan itu berarti tidak ingin membalas dan tetap berbuat baik pada yang berbuat jahat pada kita. Orang yang mudah memaafkan adalah orang yang memiliki akhlak yang luar biasa jika dia memaafkan karena mengharapkan pahala di sisi Allah, bukan balasan dari manusia.</p>
+
+      <div class="arabic-box" style="margin-top:14px">
+        <div class="arabic-src">QS. ASY-SYURA: 40</div>
+        <div class="arabic-text">فَمَنْ عَفَا وَأَصْلَحَ فَأَجْرُهُ عَلَى اللَّهِ</div>
+        <div class="arabic-trans">"Maka barang siapa memaafkan dan berbuat baik maka pahalanya di sisi Allah." [QS. Asy-Syura: 40]</div>
+      </div>
+      <div class="arabic-box">
+        <div class="arabic-src">QS. AN-NUR: 22</div>
+        <div class="arabic-text" style="font-size:1.1rem">وَلْيَعْفُوا وَلْيَصْفَحُوا أَلَا تُحِبُّونَ أَن يَغْفِرَ اللَّهُ لَكُمْ وَاللَّهُ غَفُورٌ رَّحِيمٌ</div>
+        <div class="arabic-trans">"Dan hendaklah mereka memaafkan dan berlapang dada. Apakah kamu tidak ingin bahwa Allah mengampunimu? Dan Allah adalah Maha Pengampun lagi Maha Penyayang." [QS. An-Nur: 22]</div>
+      </div>
+      <div class="hl-box teal">💬 <em>"Yuk, maafkan orang lain yang bersalah kepadamu! Bukankah kamu suka jika Allah memaafkan kesalahan-kesalahanmu?"</em></div>
+    </div>
+  </div>
+
+  <!-- D. CARA MUDAH MEMAAFKAN -->
+  <div class="acc-card pink" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">💗 D. Cara agar Mudah Memaafkan</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Beberapa cara yang bisa kita lakukan untuk belajar mudah memaafkan, antara lain:</p>
+      <div class="cloud-steps">
+        <div class="cloud-step">
+          <div class="cloud-num" style="background:var(--pink)">1</div>
+          <div class="cloud-bubble red">Berdoa kepada Allah agar kita diberi hati yang mudah memaafkan.</div>
+        </div>
+        <div class="cloud-step">
+          <div class="cloud-num" style="background:var(--pink)">2</div>
+          <div class="cloud-bubble red">Ingatlah bahwa jika kita memaafkan orang lain maka Allah akan mengampuni dosa-dosa kita.</div>
+        </div>
+        <div class="cloud-step">
+          <div class="cloud-num" style="background:var(--pink)">3</div>
+          <div class="cloud-bubble red">Bayangkan besarnya pahala memaafkan, maka kita akan termotivasi untuk mau memaafkan kesalahan orang.</div>
+        </div>
+        <div class="cloud-step">
+          <div class="cloud-num" style="background:var(--pink)">4</div>
+          <div class="cloud-bubble red">Lupakan kesalahan orang lain dengan cara mengingat-ingat semua kebaikannya.</div>
+        </div>
+        <div class="cloud-step">
+          <div class="cloud-num" style="background:var(--pink)">5</div>
+          <div class="cloud-bubble red">Bayangkan jika kita bersalah lalu dimaafkan oleh orang lain atau diampuni oleh Allah pasti kita merasa bahagia, maka demikian juga orang lain. Dengan memaafkan orang lain kita akan mendapat pahala dan membahagiakan orang lain.</div>
+        </div>
+        <div class="cloud-step">
+          <div class="cloud-num" style="background:var(--pink)">6</div>
+          <div class="cloud-bubble red">Memberi udzur (alasan untuk memaafkan) dengan selalu berprasangka baik (husnuzhan) kepada orang lain.</div>
+        </div>
+        <div class="cloud-step">
+          <div class="cloud-num" style="background:var(--pink)">7</div>
+          <div class="cloud-bubble red">Selalu berusaha membalas keburukan dengan kebaikan.</div>
+        </div>
+      </div>
+      <div class="arabic-box" style="margin-top:14px">
+        <div class="arabic-src">QS. FUSHILAT: 34</div>
+        <div class="arabic-text" style="font-size:1.1rem">ادْفَعْ بِالَّتِي هِيَ أَحْسَنُ فَإِذَا الَّذِي بَيْنَكَ وَبَيْنَهُ عَدَاوَةٌ كَأَنَّهُ وَلِيٌّ حَمِيمٌ</div>
+        <div class="arabic-trans">"Tolaklah (kejelekan itu) dengan cara yang lebih baik, maka tiba-tiba orang yang antaramu dan antara dia ada permusuhan seolah-olah telah menjadi teman yang sangat akrab." [QS. Fushilat: 34]</div>
+      </div>
+    </div>
+  </div>
+</div><!-- /b1-materi -->
+
+<!-- FLASHCARD BAB 1 -->
+<div id="b1-flashcard" class="section">
+  <div class="card">
+    <h3>🃏 Flash Card — Menahan Marah & Memaafkan</h3>
+    <p>Klik kartu untuk melihat artinya! Gunakan tombol panah untuk berpindah kartu.</p>
+  </div>
+  <div class="flashcard-container">
+    <div class="flashcard" id="b1-fc" onclick="flipFC(1)">
+      <div class="flashcard-front">
+        <div class="label">Istilah / Hadits</div>
+        <div class="arabic" id="b1-fc-front">لَا تَغْضَبْ وَلَكَ الْجَنَّةُ</div>
+      </div>
+      <div class="flashcard-back bab1-back">
+        <div class="meaning" id="b1-fc-back">"Janganlah kamu marah, maka bagimu surga."</div>
+        <div class="source" id="b1-fc-src">[HR. Thabrani]</div>
+      </div>
+    </div>
+  </div>
+  <p class="flip-hint">👆 Klik kartu untuk membalik</p>
+  <div class="fc-nav">
+    <button class="fc-btn bab1-btn" onclick="prevFC(1)">◀ Prev</button>
+    <span class="fc-counter" id="b1-fc-counter">1 / 6</span>
+    <button class="fc-btn bab1-btn" onclick="nextFC(1)">Next ▶</button>
+  </div>
+</div>
+
+<!-- TUGAS I BAB 1 - Pilihan Ganda -->
+<div id="b1-tugas1" class="section">
+  <div class="card">
+    <h3>✏️ Tugas I — Pilihan Ganda</h3>
+    <p>Jawab semua pertanyaan, lalu klik <strong>Cek Jawaban</strong>!</p>
+  </div>
+  <div class="score-bar">
+    <span>📊 Progress</span>
+    <span class="score-val" id="b1-t1-score">0 / 5 dijawab</span>
+  </div>
+  <div id="b1-t1-container"></div>
+  <div class="btn-row">
+    <button class="btn bab1-btn" onclick="checkT1(1)">✅ Cek Jawaban</button>
+    <button class="btn gold-btn" onclick="resetT1(1)">🔄 Ulangi</button>
+  </div>
+  <div class="result-badge bab1-badge" id="b1-t1-result">
+    <div class="result-emoji" id="b1-t1-emoji">🏆</div>
+    <div class="result-score" id="b1-t1-final"></div>
+    <div class="result-msg" id="b1-t1-msg"></div>
+  </div>
+</div>
+
+<!-- TUGAS II BAB 1 - Benar/Salah -->
+<div id="b1-tugas2" class="section">
+  <div class="card">
+    <h3>📝 Tugas II — Benar atau Salah?</h3>
+    <p>Tentukan apakah pernyataan berikut Benar (B) atau Salah (S)!</p>
+  </div>
+  <div class="score-bar">
+    <span>📊 Progress</span>
+    <span class="score-val" id="b1-t2-score">0 / 5 dijawab</span>
+  </div>
+  <div id="b1-t2-container"></div>
+  <div class="btn-row">
+    <button class="btn bab1-btn" onclick="checkT2(1)">✅ Cek Jawaban</button>
+    <button class="btn gold-btn" onclick="resetT2(1)">🔄 Ulangi</button>
+  </div>
+  <div class="result-badge bab1-badge" id="b1-t2-result">
+    <div class="result-emoji" id="b1-t2-emoji">🏆</div>
+    <div class="result-score" id="b1-t2-final"></div>
+    <div class="result-msg" id="b1-t2-msg"></div>
+  </div>
+</div>
+
+<!-- WORD MATCH BAB 1 -->
+<div id="b1-wordmatch" class="section">
+  <div class="card">
+    <h3>🔤 Tebak Kata — Cocokkan!</h3>
+    <p>Pilih kata di <strong>KIRI</strong>, lalu klik kategori yang tepat di <strong>KANAN</strong>.</p>
+  </div>
+  <div id="b1-wm-container"></div>
+  <div class="btn-row">
+    <button class="btn bab1-btn" onclick="resetWM(1)">🔄 Ulangi</button>
+  </div>
+  <div class="result-badge bab1-badge" id="b1-wm-result">
+    <div class="result-emoji">🎊</div>
+    <div class="result-score" id="b1-wm-score"></div>
+    <div class="result-msg">Semua kata berhasil dicocokkan! Kamu luar biasa! 🌟</div>
+  </div>
+</div>
+
+</div><!-- /bab1-world -->
+
+<!-- ==================== BAB 2: HIDUP JUJUR ==================== -->
+<div id="bab2-world" class="bab-world">
+
+<!-- MATERI -->
+<div id="b2-materi" class="section active">
+  <div class="materi-hero bab2-hero">
+    <h2>✅ Yuk, Hidup Jujur!</h2>
+    <p>Ash-Shidqu — akhlak mulia yang dicontohkan Rasulullah ﷺ 🌟</p>
+  </div>
+
+  <!-- PENGANTAR -->
+  <div class="acc-card indigo open" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">🌟 Pengantar — Mengapa Harus Jujur?</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Anak-anakku yang shalih dan shalihah, hidup jujur sangat perlu kita tekankan dalam kehidupan sehari-hari. Dengan hidup jujur maka akan banyak kebaikan yang kita dapatkan.</p>
+      <div class="hl-box indigo" style="margin-top:14px">❓ <strong>Tahukah kalian apa arti jujur?</strong></div>
+
+      <div class="sec-heading indigo"><h3>📖 A. Arti Jujur</h3></div>
+      <p><strong>Ash-Shidqu (الصِّدْقُ)</strong> artinya jujur. Dan lawannya adalah <strong>Al-kidzbu (الْكَذِبُ)</strong> artinya dusta.</p>
+      <div class="bubble-list" style="margin-top:12px">
+        <div class="bubble indigo">🗣️ Jujur dalam perkataan</div>
+        <div class="bubble indigo">🤝 Jujur dalam perbuatan</div>
+        <div class="bubble red">❌ Tidak berpura-pura atau berbohong</div>
+      </div>
+      <p style="margin-top:14px">Allah memerintahkan kepada kita agar menjadi orang yang jujur. Allah Ta'ala berfirman:</p>
+      <div class="arabic-box">
+        <div class="arabic-src">QS. AT-TAUBAH: 119</div>
+        <div class="arabic-text" style="font-size:1.2rem">يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ وَكُونُوا مَعَ الصَّادِقِينَ</div>
+        <div class="arabic-trans">"Hai orang-orang yang beriman, bertakwalah kalian kepada Allah, dan hendaklah kalian bersama orang-orang yang jujur (benar)!" [QS. At-Taubah: 119]</div>
+      </div>
+      <p>Rasulullah ﷺ juga memerintahkan kita untuk jujur dan menjauhi kedustaan, Beliau ﷺ bersabda:</p>
+      <div class="hadits-box indigo">
+        <em>Dari 'Abdullah, dia berkata: Rasulullâh ﷺ bersabda, "Kalian wajib jujur, karena sesungguhnya kejujuran itu membawa kepada kebajikan, dan kebajikan membawa kepada surga. Jika seseorang senantiasa jujur dan berusaha untuk selalu jujur, akhirnya ditulis di sisi Allâh sebagai seorang yang selalu jujur. Dan jauhilah kedustaan, karena kedustaan itu membawa kepada kemaksiatan, dan kemaksiatan membawa ke neraka. Jika seseorang senantiasa berdusta dan selalu berdusta, hingga akhirnya ditulis di sisi Allâh sebagai seorang pendusta."</em>
+        <div class="hadits-src">[HR. Muslim]</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B. MANFAAT JUJUR -->
+  <div class="acc-card indigo" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">✨ B. Manfaat Hidup Jujur</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Jujur adalah salah satu akhlak mulia yang selalu dicontohkan oleh Rasulullah ﷺ. Dalam kesehariannya Rasulullah ﷺ dikenal sebagai orang yang jujur, bahkan sejak beliau belum diangkat menjadi nabi sehingga mendapat gelar <em>Al-Amin</em> (yang dapat dipercaya). Berikut ini beberapa manfaat hidup jujur antara lain:</p>
+
+      <div class="keutamaan-strip indigo-s" style="margin-top:14px">
+        <div class="kn">1</div>
+        <div class="kt">Mendapat Pahala Meneladani Rasulullah ﷺ</div>
+      </div>
+      <p>Perbuatan baik apa pun akan bernilai ibadah, apa lagi jika diniatkan mengikuti Rasulullah ﷺ. Dengan kita mengikuti Rasulullah ﷺ maka kedudukan kita juga akan ikut mulia baik di hadapan Allah maupun di hadapan manusia.</p>
+
+      <div class="keutamaan-strip indigo-s" style="margin-top:14px">
+        <div class="kn">2</div>
+        <div class="kt">Dipercaya oleh Orang Lain</div>
+      </div>
+      <p>Dengan kita senantiasa jujur maka orang lain akan mempercayai kita. Keadaan ini membawa banyak kebaikan, antara lain bisa membuat kita memiliki banyak teman, membuka pintu rezeki, dan lain sebagainya.</p>
+
+      <div class="keutamaan-strip indigo-s" style="margin-top:14px">
+        <div class="kn">3</div>
+        <div class="kt">Membawa ke Surga</div>
+      </div>
+      <p>Dalam hadits di atas, Rasulullah ﷺ mengatakan bahwa jujur itu membawa kebaikan, dan kebaikan akan membawa ke surga. Allah Ta'ala berfirman:</p>
+      <div class="arabic-box">
+        <div class="arabic-src">QS. AL-MAIDAH: 119</div>
+        <div class="arabic-text" style="font-size:1.1rem">قَالَ اللَّهُ هَٰذَا يَوْمُ يَنفَعُ الصَّادِقِينَ صِدْقُهُمْ لَهُمْ جَنَّاتٌ تَجْرِي مِن تَحْتِهَا الْأَنْهَارُ خَالِدِينَ فِيهَا أَبَدًا رَّضِيَ اللَّهُ عَنْهُمْ وَرَضُوا عَنْهُ ذَٰلِكَ الْفَوْزُ الْعَظِيمُ</div>
+        <div class="arabic-trans">"Allah berkata: Ini adalah suatu hari yang bermanfaat bagi orang-orang yang jujur kejujuran mereka. Bagi mereka surga yang di bawahnya mengalir sungai-sungai, Mereka kekal di dalamnya selama-lamanya. Allah rida terhadap mereka dan mereka rida terhadap Allah. Itulah keberuntungan yang paling besar." [QS. Al-Maidah: 119]</div>
+      </div>
+
+      <div class="keutamaan-strip indigo-s" style="margin-top:14px">
+        <div class="kn">4</div>
+        <div class="kt">Disukai Teman</div>
+      </div>
+      <p>Kita semua pasti suka kepada teman yang jujur. Orang lain pun demikian, jika kita jujur maka teman kita pun akan suka dan mau berteman dengan kita.</p>
+
+      <div class="keutamaan-strip indigo-s" style="margin-top:14px">
+        <div class="kn">5</div>
+        <div class="kt">Akan Mendapatkan Ketenangan di Dalam Hati</div>
+      </div>
+      <p>Jika kita selalu jujur maka kita akan mendapatkan ketenangan di dalam hati kita dan akan merasa nyaman dengan kejujuran yang telah kita lakukan. Tidak ada rasa bersalah maupun rasa berdosa. Hidup kita pun akan bahagia.</p>
+      <div class="arabic-box">
+        <div class="arabic-text" style="font-size:1.1rem">دَعْ مَا يَرِيبُكَ، فَإِنَّ الصِّدْقَ طُمَأْنِينَةٌ، وَإِنَّ الْكَذِبَ رِيبَةٌ</div>
+        <div class="arabic-trans">"Tinggalkanlah apa-apa yang meragukanmu dengan mengerjakan apa-apa yang tidak meragukanmu. Sesungguhnya kejujuran adalah ketenangan dan sesungguhnya kedustaan (akan mengantarkan kepada) keragu-raguan atau kebingungan." [HR. Tirmidzi]</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C. BAHAYA DUSTA -->
+  <div class="acc-card orange" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">⚠️ C. Bahaya Sifat Dusta</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Orang yang terbiasa berdusta akan merugikan diri sendiri. Berikut ini bahaya sifat dusta antara lain:</p>
+
+      <div class="keutamaan-strip orange-s" style="margin-top:14px">
+        <div class="kn">1</div>
+        <div class="kt">Membawa kepada Neraka</div>
+      </div>
+      <p>Dalam hadits di atas, Rasulullah ﷺ mengatakan bahwa dusta itu membawa kepada kejahatan, dan kejahatan mengantarkan ke neraka.</p>
+
+      <div class="keutamaan-strip orange-s" style="margin-top:14px">
+        <div class="kn">2</div>
+        <div class="kt">Membuat Pelakunya Tidak Memiliki Harga Diri</div>
+      </div>
+      <p>Orang yang sering berdusta sama saja dia sedang menumbuhkan akhlak buruk pada dirinya. Orang seperti ini sama saja dengan merendahkan diri sendiri, sehingga dia hina di hadapan orang lain karena bersifat buruk.</p>
+
+      <div class="keutamaan-strip orange-s" style="margin-top:14px">
+        <div class="kn">3</div>
+        <div class="kt">Tidak Dipercaya oleh Orang Lain</div>
+      </div>
+      <p>Tidak ada orang yang suka dibohongi. Pasti kita merasa kesal sekali saat tahu kita dibohongi, sehingga di lain kesempatan kita sulit percaya lagi kepadanya. Sulit bagi kita mempercayai omongan orang yang selama ini sering berbohong. Demikian juga, orang lain pun tidak mau mempercayai kita jika kita sering berbohong.</p>
+
+      <div class="keutamaan-strip orange-s" style="margin-top:14px">
+        <div class="kn">4</div>
+        <div class="kt">Dijauhi Teman</div>
+      </div>
+      <p>Betapa malasnya kita berteman dengan pendusta. Omongannya tidak bisa dipercaya, dan menjadikan kita selalu curiga, bahkan jika pun dia berkata benar. Hal itu terjadi karena sulit sekali membangun kepercayaan kepada orang yang pernah membohongi kita.</p>
+
+      <div class="keutamaan-strip orange-s" style="margin-top:14px">
+        <div class="kn">5</div>
+        <div class="kt">Bisa Menimbulkan Sifat Kemunafikan</div>
+      </div>
+      <div class="arabic-box">
+        <div class="arabic-text" style="font-size:1.1rem">آيَةُ الْمُنَافِقِ ثَلَاثٌ إِذَا حَدَّثَ كَذَبَ، وَإِذَا وَعَدَ أَخْلَفَ، وَإِذَا اؤْتُمِنَ خَانَ</div>
+        <div class="arabic-trans">"Tanda orang munafik itu ada tiga, yaitu: jika dia berbicara dia dusta, jika dia berjanji maka dia mengingkarinya dan jika dia dipercaya maka dia berkhianat." [HR. Bukhari]</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D. CARA JUJUR -->
+  <div class="acc-card green" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">💚 D. Cara agar Bisa Menjadi Orang Jujur</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Semua akhlak yang mulia membutuhkan pembiasaan agar akhlak tersebut menempel pada diri kita dan menjadi akhlak sehari-hari kita. Demikian juga dengan sifat jujur, agar menjadi orang jujur bisa kita usahakan dengan cara:</p>
+
+      <div class="cloud-steps">
+        <div class="cloud-step">
+          <div class="cloud-num green">1</div>
+          <div class="cloud-bubble green">Berdoa kepada Allah agar dijadikan orang yang senantiasa jujur.</div>
+        </div>
+        <div class="cloud-step">
+          <div class="cloud-num green">2</div>
+          <div class="cloud-bubble green">Berusaha menerapkan dan membiasakan sifat jujur setiap saat, baik perkataan maupun perbuatan.</div>
+        </div>
+        <div class="cloud-step">
+          <div class="cloud-num" style="background:#888">3</div>
+          <div class="cloud-bubble" style="background:#f5f5f5;border-color:#999;color:#333">Meyakini bahwa jujur adalah perintah Allah dan Rasul-Nya dan balasannya adalah surga.</div>
+        </div>
+        <div class="cloud-step">
+          <div class="cloud-num gold">4</div>
+          <div class="cloud-bubble gold">Setiap akan berbohong, ingatkan diri kita bahwa Allah Maha Melihat dan Maha Mendengar perbuatan kita. Kalau kita berbohong maka kita malu kepada Allah.</div>
+        </div>
+        <div class="cloud-step">
+          <div class="cloud-num" style="background:var(--teal)">5</div>
+          <div class="cloud-bubble">Setiap akan berbohong, ingatkan diri kita bahwa itu perbuatan orang munafik dan berdosa.</div>
+        </div>
+        <div class="cloud-step">
+          <div class="cloud-num" style="background:#444">6</div>
+          <div class="cloud-bubble dark">Ingat-ingat balasan bagi orang yang jujur agar kita semangat menerapkan kejujuran.</div>
+        </div>
+        <div class="cloud-step">
+          <div class="cloud-num" style="background:var(--pink)">7</div>
+          <div class="cloud-bubble red">Ingatkan diri kita bahwa sebagaimana kita tidak suka dibohongi maka orang lainpun demikian.</div>
+        </div>
+      </div>
+      <div class="hl-box green" style="margin-top:14px">🌟 <strong>Allahu A'lam</strong> — Mari kita biasakan hidup jujur setiap hari!</div>
+    </div>
+  </div>
+</div><!-- /b2-materi -->
+
+<!-- FLASHCARD BAB 2 -->
+<div id="b2-flashcard" class="section">
+  <div class="card indigo">
+    <h3>🃏 Flash Card — Hidup Jujur</h3>
+    <p>Klik kartu untuk melihat artinya! Gunakan tombol panah untuk berpindah kartu.</p>
+  </div>
+  <div class="flashcard-container">
+    <div class="flashcard" id="b2-fc" onclick="flipFC(2)">
+      <div class="flashcard-front">
+        <div class="label">Istilah / Ayat</div>
+        <div class="arabic" id="b2-fc-front">الصِّدْقُ</div>
+      </div>
+      <div class="flashcard-back bab2-back">
+        <div class="meaning" id="b2-fc-back">Ash-Shidqu artinya <strong>Jujur</strong> — berkata dan berbuat yang sebenarnya.</div>
+        <div class="source" id="b2-fc-src">Kosakata Islami</div>
+      </div>
+    </div>
+  </div>
+  <p class="flip-hint">👆 Klik kartu untuk membalik</p>
+  <div class="fc-nav">
+    <button class="fc-btn bab2-btn" onclick="prevFC(2)">◀ Prev</button>
+    <span class="fc-counter" id="b2-fc-counter">1 / 6</span>
+    <button class="fc-btn bab2-btn" onclick="nextFC(2)">Next ▶</button>
+  </div>
+</div>
+
+<!-- TUGAS I BAB 2 -->
+<div id="b2-tugas1" class="section">
+  <div class="card indigo">
+    <h3>✏️ Tugas I — Pilihan Ganda</h3>
+    <p>Jawab semua pertanyaan, lalu klik <strong>Cek Jawaban</strong>!</p>
+  </div>
+  <div class="score-bar">
+    <span>📊 Progress</span>
+    <span class="score-val bab2" id="b2-t1-score">0 / 5 dijawab</span>
+  </div>
+  <div id="b2-t1-container"></div>
+  <div class="btn-row">
+    <button class="btn bab2-btn" onclick="checkT1(2)">✅ Cek Jawaban</button>
+    <button class="btn gold-btn" onclick="resetT1(2)">🔄 Ulangi</button>
+  </div>
+  <div class="result-badge bab2-badge" id="b2-t1-result">
+    <div class="result-emoji" id="b2-t1-emoji">🏆</div>
+    <div class="result-score" id="b2-t1-final"></div>
+    <div class="result-msg" id="b2-t1-msg"></div>
+  </div>
+</div>
+
+<!-- TUGAS II BAB 2 -->
+<div id="b2-tugas2" class="section">
+  <div class="card indigo">
+    <h3>📝 Tugas II — Benar atau Salah?</h3>
+    <p>Tentukan apakah pernyataan berikut Benar (B) atau Salah (S)!</p>
+  </div>
+  <div class="score-bar">
+    <span>📊 Progress</span>
+    <span class="score-val bab2" id="b2-t2-score">0 / 5 dijawab</span>
+  </div>
+  <div id="b2-t2-container"></div>
+  <div class="btn-row">
+    <button class="btn bab2-btn" onclick="checkT2(2)">✅ Cek Jawaban</button>
+    <button class="btn gold-btn" onclick="resetT2(2)">🔄 Ulangi</button>
+  </div>
+  <div class="result-badge bab2-badge" id="b2-t2-result">
+    <div class="result-emoji" id="b2-t2-emoji">🏆</div>
+    <div class="result-score" id="b2-t2-final"></div>
+    <div class="result-msg" id="b2-t2-msg"></div>
+  </div>
+</div>
+
+<!-- WORD MATCH BAB 2 -->
+<div id="b2-wordmatch" class="section">
+  <div class="card indigo">
+    <h3>🔤 Tebak Kata — Cocokkan!</h3>
+    <p>Pilih kata di <strong>KIRI</strong>, lalu klik kategori yang tepat di <strong>KANAN</strong>.</p>
+  </div>
+  <div id="b2-wm-container"></div>
+  <div class="btn-row">
+    <button class="btn bab2-btn" onclick="resetWM(2)">🔄 Ulangi</button>
+  </div>
+  <div class="result-badge bab2-badge" id="b2-wm-result">
+    <div class="result-emoji">🎊</div>
+    <div class="result-score" id="b2-wm-score"></div>
+    <div class="result-msg">Semua kata berhasil dicocokkan! Kamu luar biasa! 🌟</div>
+  </div>
+</div>
+
+</div><!-- /bab2-world -->
+
+<script>
+// ═══════════════════════════════════════════════
+// DATA
+// ═══════════════════════════════════════════════
+
+// FLASHCARD DATA
+var fcData = {
+  1: [
+    { front:'لَا تَغْضَبْ وَلَكَ الْجَنَّةُ', back:'Janganlah kamu marah, maka bagimu surga.', src:'[HR. Thabrani]', type:'arabic' },
+    { front:'الْكَاظِمِينَ الْغَيْظَ', back:'Al-Kazhiminal Ghaizha = Orang-orang yang menahan amarahnya (termasuk ciri orang bertakwa penghuni surga)', src:'[QS. Ali Imran: 134]', type:'arabic' },
+    { front:'أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ', back:'Aku berlindung kepada Allah dari godaan setan yang terkutuk. (Dibaca ketika sedang marah)', src:'Cara Meredakan Marah #1', type:'arabic' },
+    { front:'Menahan Marah', back:'Akhlak mulia yang dapat mengantarkan seseorang ke surga. Rasulullah ﷺ berwasiat "Janganlah engkau marah!" berulang kali.', src:'HR. Bukhari', type:'term' },
+    { front:'Mudah Memaafkan', back:'Memaafkan berarti tidak ingin membalas dan tetap berbuat baik pada yang berbuat jahat kepada kita. Lebih utama dari sekadar menahan amarah.', src:'QS. Asy-Syura: 40', type:'term' },
+    { front:'فَمَنْ عَفَا وَأَصْلَحَ فَأَجْرُهُ عَلَى اللَّهِ', back:'Maka barang siapa memaafkan dan berbuat baik maka pahalanya di sisi Allah.', src:'[QS. Asy-Syura: 40]', type:'arabic' },
+  ],
+  2: [
+    { front:'الصِّدْقُ', back:'Ash-Shidqu = Jujur, berkata dan berbuat yang sebenarnya.', src:'Kosakata Islami', type:'arabic' },
+    { front:'الْكَذِبُ', back:'Al-kidzbu = Dusta, lawan dari jujur. Membawa kepada kemaksiatan dan neraka.', src:'HR. Muslim', type:'arabic' },
+    { front:'يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ وَكُونُوا مَعَ الصَّادِقِينَ', back:'Hai orang-orang yang beriman, bertakwalah kalian kepada Allah, dan hendaklah kalian bersama orang-orang yang jujur (benar)!', src:'[QS. At-Taubah: 119]', type:'arabic' },
+    { front:'Al-Amin', back:'Gelar yang diberikan kepada Rasulullah ﷺ sebelum menjadi nabi karena beliau selalu jujur dan dapat dipercaya.', src:'Sejarah Nabi', type:'term' },
+    { front:'5 Manfaat Jujur', back:'1) Pahala meneladani Rasulullah ﷺ\n2) Dipercaya orang lain\n3) Membawa ke surga\n4) Disukai teman\n5) Ketenangan hati', src:'Bab Hidup Jujur', type:'term' },
+    { front:'5 Bahaya Dusta', back:'1) Membawa ke neraka\n2) Tidak memiliki harga diri\n3) Tidak dipercaya\n4) Dijauhi teman\n5) Bisa menimbulkan sifat munafik', src:'Bab Hidup Jujur', type:'term' },
+  ]
+};
+
+// QUIZ T1 DATA (Pilihan Ganda)
+var t1Map = {
+  1: [
+    { q:'Apa yang dijanjikan Rasulullah ﷺ bagi orang yang mampu menahan marah?', opts:['Masuk surga','Mendapat harta banyak'], ans:0 },
+    { q:'Apa yang harus diucapkan ketika sedang marah untuk berlindung dari setan?', opts:['Alhamdulillah','A\'udzu billahi minasy syaithanir rajim'], ans:1 },
+    { q:'Menurut hadits Rasulullah ﷺ, orang yang KUAT adalah…', opts:['Orang yang pandai bergelut','Orang yang dapat menguasai dirinya ketika marah'], ans:1 },
+    { q:'Memaafkan orang lain berarti Allah akan…', opts:['Mengampuni dosa-dosa kita','Memberi kita musuh'], ans:0 },
+    { q:'Menahan marah dan mudah memaafkan adalah ciri orang bertakwa berdasarkan…', opts:['QS. Al-Baqarah: 1','QS. Ali Imran: 133-134'], ans:1 },
+  ],
+  2: [
+    { q:'Ash-Shidqu (الصِّدْقُ) artinya…', opts:['Dusta','Jujur'], ans:1 },
+    { q:'Gelar apa yang diberikan kepada Rasulullah ﷺ karena beliau selalu jujur?', opts:['Al-Amin','Al-Ghafur'], ans:0 },
+    { q:'Apa bahaya orang yang terbiasa berdusta menurut hadits?', opts:['Membawa kepada neraka','Membawa kepada surga'], ans:0 },
+    { q:'Salah satu cara menjadi orang jujur adalah…', opts:['Berdoa kepada Allah agar dijadikan orang jujur','Tidak perlu usaha apapun'], ans:0 },
+    { q:'Tanda orang munafik menurut HR. Bukhari adalah, KECUALI…', opts:['Jika berjanji dia menepati','Jika berjanji dia mengingkari'], ans:0 },
+  ]
+};
+
+// QUIZ T2 DATA (Benar/Salah)
+var t2Map = {
+  1: [
+    { q:'Marah disebabkan oleh bisikan setan.', opts:['Benar (B)','Salah (S)'], ans:0 },
+    { q:'Membalas kejahatan dengan kejahatan adalah akhlak yang dianjurkan Islam.', opts:['Benar (B)','Salah (S)'], ans:1 },
+    { q:'Mengubah posisi duduk saat marah dapat membantu meredakan kemarahan.', opts:['Benar (B)','Salah (S)'], ans:0 },
+    { q:'Memaafkan sama saja dengan menahan amarah, tidak lebih utama.', opts:['Benar (B)','Salah (S)'], ans:1 },
+    { q:'Orang yang memaafkan karena mengharap pahala Allah memiliki akhlak yang luar biasa.', opts:['Benar (B)','Salah (S)'], ans:0 },
+  ],
+  2: [
+    { q:'Al-kidzbu (الْكَذِبُ) artinya jujur.', opts:['Benar (B)','Salah (S)'], ans:1 },
+    { q:'Rasulullah ﷺ mendapat gelar Al-Amin karena selalu jujur sejak sebelum menjadi nabi.', opts:['Benar (B)','Salah (S)'], ans:0 },
+    { q:'Orang yang jujur akan dipercaya oleh orang lain.', opts:['Benar (B)','Salah (S)'], ans:0 },
+    { q:'Dusta membawa kepada kebajikan dan surga.', opts:['Benar (B)','Salah (S)'], ans:1 },
+    { q:'Salah satu cara menjadi jujur adalah mengingat bahwa Allah Maha Melihat perbuatan kita.', opts:['Benar (B)','Salah (S)'], ans:0 },
+  ]
+};
+
+// WORD MATCH DATA
+var wmDataMap = {
+  1: [
+    { word:'Menahan marah',    cat:'Akhlak Terpuji' },
+    { word:'Memaafkan',        cat:'Akhlak Terpuji' },
+    { word:'Memukul',          cat:'Akhlak Tercela' },
+    { word:'Mencaci maki',     cat:'Akhlak Tercela' },
+    { word:'Lā taghdab',       cat:'Wasiat Nabi' },
+    { word:'Berlindung Allah', cat:'Cara Meredakan' },
+    { word:'Diam saat marah',  cat:'Cara Meredakan' },
+    { word:'Berteriak',        cat:'Akhlak Tercela' },
+  ],
+  2: [
+    { word:'Ash-Shidqu',       cat:'Istilah Jujur' },
+    { word:'Al-Amin',          cat:'Gelar Nabi' },
+    { word:'Al-kidzbu',        cat:'Istilah Dusta' },
+    { word:'Dipercaya',        cat:'Manfaat Jujur' },
+    { word:'Dijauhi teman',    cat:'Bahaya Dusta' },
+    { word:'Neraka',           cat:'Bahaya Dusta' },
+    { word:'Surga',            cat:'Manfaat Jujur' },
+    { word:'Al-Quran',         cat:'Gelar Nabi' },
+  ]
+};
+var wmCatMap = {
+  1: ['Akhlak Terpuji','Akhlak Tercela','Wasiat Nabi','Cara Meredakan'],
+  2: ['Istilah Jujur','Istilah Dusta','Manfaat Jujur','Bahaya Dusta','Gelar Nabi']
+};
+
+// ═══════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════
+var fcState  = { 1:{idx:0,flipped:false}, 2:{idx:0,flipped:false} };
+var t1State  = { 1:{ans:{},checked:false}, 2:{ans:{},checked:false} };
+var t2State  = { 1:{ans:{},checked:false}, 2:{ans:{},checked:false} };
+var wmState  = { 1:{sel:null,matched:{}}, 2:{sel:null,matched:{}} };
+
+var babColors = { 1:'var(--teal)', 2:'var(--indigo)' };
+var babBorder = { 1:'var(--teal-dark)', 2:'var(--indigo-dark)' };
+
+// ═══════════════════════════════════════════════
+// NAVIGATION
+// ═══════════════════════════════════════════════
+function switchBab(bab, btn) {
+  [1,2].forEach(function(b) {
+    var w = document.getElementById('bab'+b+'-world');
+    var n = document.getElementById('nav-bab'+b);
+    if (w) w.style.display = (b===bab)?'block':'none';
+    if (n) n.style.display = (b===bab)?'flex':'none';
+    // Reset tab to Materi
+    if (b===bab) {
+      var sections = w.querySelectorAll('.section');
+      sections.forEach(function(s){ s.classList.remove('active'); });
+      var first = document.getElementById('b'+b+'-materi');
+      if (first) first.classList.add('active');
+      var tabs = n.querySelectorAll('.tab-btn');
+      tabs.forEach(function(t){ t.classList.remove('active'); });
+      if (tabs[0]) tabs[0].classList.add('active');
+    }
+  });
+
+  // Update header
+  var header = document.getElementById('main-header');
+  header.className = 'header bab'+bab;
+  var titles = {1:'😤 Menahan Marah & Mudah Memaafkan', 2:'✅ Yuk, Hidup Jujur!'};
+  var badges = {1:'Bab III', 2:'Bab IV'};
+  document.getElementById('header-title').textContent = titles[bab];
+  document.getElementById('bab-badge').textContent = badges[bab];
+
+  // Update btn
+  document.querySelectorAll('.bab-btn').forEach(function(b){ b.className='bab-btn'; });
+  btn.classList.add('active-bab'+bab);
+}
+
+function showTab(sectionId, btn, navId) {
+  var bab = sectionId.charAt(1);
+  var world = document.getElementById('bab'+bab+'-world');
+  world.querySelectorAll('.section').forEach(function(s){ s.classList.remove('active'); });
+  document.getElementById(sectionId).classList.add('active');
+  document.querySelectorAll('#nav-bab'+bab+' .tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+}
+
+function toggleAcc(card) {
+  card.classList.toggle('open');
+}
+
+// ═══════════════════════════════════════════════
+// FLASHCARD
+// ═══════════════════════════════════════════════
+function renderFC(bab) {
+  var st   = fcState[bab];
+  var data = fcData[bab];
+  var item = data[st.idx];
+  var fc   = document.getElementById('b'+bab+'-fc');
+  if (!fc) return;
+  if (st.flipped) fc.classList.add('flipped'); else fc.classList.remove('flipped');
+
+  var frontEl = document.getElementById('b'+bab+'-fc-front');
+  var backEl  = document.getElementById('b'+bab+'-fc-back');
+  var srcEl   = document.getElementById('b'+bab+'-fc-src');
+  var ctrEl   = document.getElementById('b'+bab+'-fc-counter');
+
+  if (item.type === 'arabic') {
+    frontEl.className = 'arabic';
+  } else {
+    frontEl.className = 'term';
+  }
+  frontEl.textContent = item.front;
+  backEl.innerHTML  = item.back.replace(/\n/g,'<br>');
+  srcEl.textContent = item.src;
+  ctrEl.textContent = (st.idx+1)+' / '+data.length;
+}
+function flipFC(bab) {
+  fcState[bab].flipped = !fcState[bab].flipped;
+  renderFC(bab);
+}
+function nextFC(bab) {
+  var data = fcData[bab];
+  fcState[bab].idx = (fcState[bab].idx+1) % data.length;
+  fcState[bab].flipped = false;
+  renderFC(bab);
+}
+function prevFC(bab) {
+  var data = fcData[bab];
+  fcState[bab].idx = (fcState[bab].idx - 1 + data.length) % data.length;
+  fcState[bab].flipped = false;
+  renderFC(bab);
+}
+
+// ═══════════════════════════════════════════════
+// TUGAS I (Pilihan Ganda)
+// ═══════════════════════════════════════════════
+function renderT1(bab) {
+  var container = document.getElementById('b'+bab+'-t1-container');
+  if (!container) return;
+  var data = t1Map[bab];
+  var st   = t1State[bab];
+  container.innerHTML = '';
+  data.forEach(function(q, qi) {
+    var card    = document.createElement('div');
+    card.className = 'quiz-card';
+    var qEl = document.createElement('div');
+    qEl.className = 'quiz-q'+(bab===2?' bab2':'');
+    qEl.textContent = (qi+1)+'. '+q.q;
+    card.appendChild(qEl);
+    var optsDiv = document.createElement('div');
+    optsDiv.className = 'quiz-options';
+    optsDiv.id = 'b'+bab+'-t1-opts-'+qi;
+    card.appendChild(optsDiv);
+    var fbDiv = document.createElement('div');
+    fbDiv.className = 'quiz-feedback';
+    fbDiv.id = 'b'+bab+'-t1-fb-'+qi;
+    card.appendChild(fbDiv);
+    container.appendChild(card);
+    q.opts.forEach(function(opt, oi) {
+      var btn = document.createElement('button');
+      btn.className = 'quiz-opt'+(bab===2?' bab2-opt':'');
+      btn.textContent = (oi===0?'a. ':'b. ')+opt;
+      (function(babC,qiC,oiC){
+        btn.onclick = function() {
+          if (t1State[babC].checked) return;
+          t1State[babC].ans[qiC] = oiC;
+          optsDiv.querySelectorAll('.quiz-opt').forEach(function(b){ b.style.background=''; b.style.borderColor=''; });
+          this.style.background  = babColors[babC];
+          this.style.borderColor = babBorder[babC];
+          this.style.color = 'white';
+          var answered = Object.keys(t1State[babC].ans).length;
+          document.getElementById('b'+babC+'-t1-score').textContent = answered+' / '+t1Map[babC].length+' dijawab';
+        };
+      })(bab,qi,oi);
+      optsDiv.appendChild(btn);
+      if (st.ans[qi]!==undefined && !st.checked && oi===st.ans[qi]) {
+        btn.style.background  = babColors[bab];
+        btn.style.borderColor = babBorder[bab];
+        btn.style.color = 'white';
+      }
+    });
+  });
+}
+function checkT1(bab) {
+  var data = t1Map[bab]; var st = t1State[bab]; st.checked = true; var correct = 0;
+  data.forEach(function(q, qi) {
+    var optsDiv = document.getElementById('b'+bab+'-t1-opts-'+qi);
+    var fbDiv   = document.getElementById('b'+bab+'-t1-fb-'+qi);
+    var btns    = optsDiv.querySelectorAll('.quiz-opt');
+    btns.forEach(function(b){ b.disabled=true; b.style.background=''; b.style.borderColor=''; b.style.color=''; });
+    if (st.ans[qi]!==undefined) {
+      if (st.ans[qi]===q.ans){ btns[st.ans[qi]].classList.add('correct'); correct++; fbDiv.textContent='✅ Benar!'; fbDiv.className='quiz-feedback show correct'; }
+      else { btns[st.ans[qi]].classList.add('wrong'); btns[q.ans].classList.add('correct'); fbDiv.textContent='❌ Jawaban: '+(q.ans===0?'a':'b')+'. '+q.opts[q.ans]; fbDiv.className='quiz-feedback show wrong'; }
+    } else { btns[q.ans].classList.add('correct'); fbDiv.textContent='📌 Jawaban: '+(q.ans===0?'a':'b')+'. '+q.opts[q.ans]; fbDiv.className='quiz-feedback show wrong'; }
+  });
+  var pct = Math.round(correct/data.length*100);
+  document.getElementById('b'+bab+'-t1-score').textContent = correct+' / '+data.length+' Benar';
+  document.getElementById('b'+bab+'-t1-emoji').textContent = pct>=80?'🏆':pct>=60?'⭐':'💪';
+  document.getElementById('b'+bab+'-t1-final').textContent = 'Nilai: '+pct+' — '+correct+'/'+data.length+' Benar';
+  document.getElementById('b'+bab+'-t1-msg').textContent   = pct>=80?'Luar biasa! Kamu bintang kelas! 🌟':pct>=60?'Bagus! Terus semangat! 📚':'Jangan menyerah, pelajari lagi ya! 💪';
+  document.getElementById('b'+bab+'-t1-result').classList.add('show');
+}
+function resetT1(bab) {
+  t1State[bab]={ans:{},checked:false};
+  document.getElementById('b'+bab+'-t1-score').textContent='0 / '+t1Map[bab].length+' dijawab';
+  document.getElementById('b'+bab+'-t1-result').classList.remove('show');
+  renderT1(bab);
+}
+
+// ═══════════════════════════════════════════════
+// TUGAS II (Benar/Salah)
+// ═══════════════════════════════════════════════
+function renderT2(bab) {
+  var container = document.getElementById('b'+bab+'-t2-container');
+  if (!container) return;
+  var data = t2Map[bab]; var st = t2State[bab];
+  container.innerHTML = '';
+  data.forEach(function(q, qi) {
+    var card = document.createElement('div');
+    card.className = 'quiz-card';
+    var qEl = document.createElement('div');
+    qEl.className = 'quiz-q'+(bab===2?' bab2':'');
+    qEl.textContent = (qi+1)+'. '+q.q;
+    card.appendChild(qEl);
+    var optsDiv = document.createElement('div');
+    optsDiv.className = 'quiz-options';
+    optsDiv.id = 'b'+bab+'-t2-opts-'+qi;
+    card.appendChild(optsDiv);
+    var fbDiv = document.createElement('div');
+    fbDiv.className = 'quiz-feedback';
+    fbDiv.id = 'b'+bab+'-t2-fb-'+qi;
+    card.appendChild(fbDiv);
+    container.appendChild(card);
+    q.opts.forEach(function(opt, oi) {
+      var btn = document.createElement('button');
+      btn.className = 'quiz-opt'+(bab===2?' bab2-opt':'');
+      btn.textContent = opt;
+      (function(babC,qiC,oiC){
+        btn.onclick = function() {
+          if (t2State[babC].checked) return;
+          t2State[babC].ans[qiC] = oiC;
+          optsDiv.querySelectorAll('.quiz-opt').forEach(function(b){ b.style.background=''; b.style.borderColor=''; b.style.color=''; });
+          this.style.background  = babColors[babC];
+          this.style.borderColor = babBorder[babC];
+          this.style.color = 'white';
+          document.getElementById('b'+babC+'-t2-score').textContent = Object.keys(t2State[babC].ans).length+' / '+t2Map[babC].length+' dijawab';
+        };
+      })(bab,qi,oi);
+      optsDiv.appendChild(btn);
+      if (st.ans[qi]!==undefined && !st.checked && oi===st.ans[qi]) {
+        btn.style.background  = babColors[bab];
+        btn.style.borderColor = babBorder[bab];
+        btn.style.color = 'white';
+      }
+    });
+  });
+}
+function checkT2(bab) {
+  var data = t2Map[bab]; var st = t2State[bab]; st.checked = true; var correct = 0;
+  data.forEach(function(q, qi) {
+    var optsDiv = document.getElementById('b'+bab+'-t2-opts-'+qi);
+    var fbDiv   = document.getElementById('b'+bab+'-t2-fb-'+qi);
+    var btns    = optsDiv.querySelectorAll('.quiz-opt');
+    btns.forEach(function(b){ b.disabled=true; b.style.background=''; b.style.borderColor=''; b.style.color=''; });
+    if (st.ans[qi]!==undefined) {
+      if (st.ans[qi]===q.ans){ btns[st.ans[qi]].classList.add('correct'); correct++; fbDiv.textContent='✅ Benar!'; fbDiv.className='quiz-feedback show correct'; }
+      else { btns[st.ans[qi]].classList.add('wrong'); btns[q.ans].classList.add('correct'); fbDiv.textContent='❌ Jawaban: '+q.opts[q.ans]; fbDiv.className='quiz-feedback show wrong'; }
+    } else { btns[q.ans].classList.add('correct'); fbDiv.textContent='📌 Jawaban: '+q.opts[q.ans]; fbDiv.className='quiz-feedback show wrong'; }
+  });
+  var pct = Math.round(correct/data.length*100);
+  document.getElementById('b'+bab+'-t2-score').textContent = correct+' / '+data.length+' Benar';
+  document.getElementById('b'+bab+'-t2-emoji').textContent = pct>=80?'🏆':pct>=60?'⭐':'💪';
+  document.getElementById('b'+bab+'-t2-final').textContent = 'Nilai: '+pct+' — '+correct+'/'+data.length+' Benar';
+  document.getElementById('b'+bab+'-t2-msg').textContent   = pct>=80?'Luar biasa! Kamu bintang kelas! 🌟':pct>=60?'Bagus! Terus semangat! 📚':'Jangan menyerah, pelajari lagi ya! 💪';
+  document.getElementById('b'+bab+'-t2-result').classList.add('show');
+}
+function resetT2(bab) {
+  t2State[bab]={ans:{},checked:false};
+  document.getElementById('b'+bab+'-t2-score').textContent='0 / '+t2Map[bab].length+' dijawab';
+  document.getElementById('b'+bab+'-t2-result').classList.remove('show');
+  renderT2(bab);
+}
+
+// ═══════════════════════════════════════════════
+// WORD MATCH
+// ═══════════════════════════════════════════════
+function renderWM(bab) {
+  var container = document.getElementById('b'+bab+'-wm-container');
+  if (!container) return;
+  var items = wmDataMap[bab]; var cats = wmCatMap[bab]; var st = wmState[bab];
+  var remaining   = items.filter(function(i){ return !st.matched[i.word]; });
+  var matchedKeys = Object.keys(st.matched);
+  var color = { 1:'var(--teal)', 2:'var(--indigo)' };
+  var mHTML = matchedKeys.length>0 ? '<div class="card green" style="margin-bottom:14px"><h3>✅ Sudah dicocokkan ('+matchedKeys.length+'/'+items.length+')</h3><div class="bubble-list">'+matchedKeys.map(function(k){ return '<div class="bubble green">'+k+' → '+st.matched[k]+'</div>'; }).join('')+'</div></div>' : '';
+  container.innerHTML = mHTML
+    + '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start">'
+    + '<div class="card" style="margin-bottom:0;padding:14px"><h3 style="font-size:1rem;margin-bottom:10px;text-align:center;color:'+color[bab]+'">📝 Kata</h3><div style="display:flex;flex-direction:column;gap:8px" id="b'+bab+'-wm-words"></div></div>'
+    + '<div class="card gold" style="margin-bottom:0;padding:14px"><h3 style="font-size:1rem;margin-bottom:10px;text-align:center;color:#8a6200">📂 Kategori</h3><div style="display:flex;flex-direction:column;gap:8px" id="b'+bab+'-wm-cats"></div></div>'
+    + '</div>';
+  var wordsDiv = document.getElementById('b'+bab+'-wm-words');
+  if (remaining.length===0) {
+    wordsDiv.innerHTML='<div style="text-align:center;color:#888;font-size:0.9rem;padding:10px">🎉 Semua dicocokkan!</div>';
+  } else {
+    remaining.slice().sort(function(){ return Math.random()-0.5; }).forEach(function(item){
+      var btn = document.createElement('div');
+      btn.className = 'match-item'+(st.sel===item.word?' selected':'');
+      btn.style.cssText='padding:10px 8px;font-size:0.85rem;';
+      btn.textContent = item.word;
+      (function(w){ btn.onclick=function(){ wmState[bab].sel=w; renderWM(bab); }; })(item.word);
+      wordsDiv.appendChild(btn);
+    });
+  }
+  var catsDiv = document.getElementById('b'+bab+'-wm-cats');
+  cats.forEach(function(cat){
+    var count = Object.values(st.matched).filter(function(v){ return v===cat; }).length;
+    var total = items.filter(function(i){ return i.cat===cat; }).length;
+    var done  = count===total;
+    var btn   = document.createElement('div');
+    btn.className = 'match-item'+(done?' matched':'');
+    btn.style.cssText='padding:11px 8px;font-size:0.82rem;font-weight:800;';
+    btn.innerHTML = cat+' <span style="font-size:0.7rem;opacity:0.55">('+count+'/'+total+')</span>';
+    if (!done){ (function(c){ btn.onclick=function(){ wmSelect(bab,c); }; })(cat); }
+    catsDiv.appendChild(btn);
+  });
+  if (matchedKeys.length===items.length) {
+    document.getElementById('b'+bab+'-wm-result').classList.add('show');
+    document.getElementById('b'+bab+'-wm-score').textContent='Semua '+items.length+' kata berhasil dicocokkan! 🎊';
+  }
+}
+function wmSelect(bab, cat) {
+  var items = wmDataMap[bab]; var st = wmState[bab];
+  if (!st.sel) return;
+  var item = items.filter(function(i){ return i.word===st.sel; })[0];
+  if (item && item.cat===cat) {
+    st.matched[st.sel]=cat; st.sel=null; renderWM(bab);
+  } else {
+    var catsDiv = document.getElementById('b'+bab+'-wm-cats');
+    if (catsDiv) catsDiv.querySelectorAll('.match-item').forEach(function(b){
+      if (b.textContent.indexOf(cat.split(' ')[0])>=0) b.classList.add('wrong-flash');
+    });
+    setTimeout(function(){
+      var cd = document.getElementById('b'+bab+'-wm-cats');
+      if (cd) cd.querySelectorAll('.match-item').forEach(function(b){ b.classList.remove('wrong-flash'); });
+    },500);
+    st.sel=null; renderWM(bab);
+  }
+}
+function resetWM(bab) {
+  wmState[bab]={sel:null,matched:{}};
+  document.getElementById('b'+bab+'-wm-result').classList.remove('show');
+  renderWM(bab);
+}
+
+// ═══════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════
+window.addEventListener('DOMContentLoaded', function() {
+  [1,2].forEach(function(b){
+    renderFC(b);
+    renderT1(b);
+    renderT2(b);
+    renderWM(b);
+  });
+});
+</script>
+</body>
+</html>
