@@ -6,6 +6,25 @@ Aplikasi web interaktif untuk belajar Akhlak Islami Kelas 1 SD, mencakup Bab 3 d
 
 ---
 
+## 📸 Tampilan Aplikasi
+
+### Halaman Materi (Bab 3 — Menahan Marah)
+![Materi Bab 3](ss_materi.png)
+
+### Flash Card Dalil
+![Flash Card](ss_flashcard.png)
+
+### Tugas I — Pilihan Ganda
+![Tugas I](ss_tugas1.png)
+
+### Tugas II — Benar atau Salah?
+![Tugas II](ss_tugas2.png)
+
+### Bab 4 — Hidup Jujur
+![Bab 4](ss_bab4.png)
+
+---
+
 ## 📚 Konten Materi
 
 | Bab | Judul | Warna Tema |
@@ -33,7 +52,7 @@ Penjelasan materi lengkap dalam format accordion yang bisa dibuka-tutup. Dilengk
 - 7 Cara menjadi Orang Jujur
 
 ### 🃏 Flash Card
-Kartu dalil dengan efek flip 3D. Sisi depan menampilkan ayat/dalil dalam tulisan Arab atau istilah, sisi belakang menampilkan arti dan penjelasan lengkap. Bisa dinavigasi maju-mundur. Tersedia 6 kartu per bab.
+Kartu dalil dengan efek flip 3D. Sisi depan menampilkan ayat/dalil dalam tulisan Arab atau istilah, sisi belakang menampilkan arti dan penjelasan lengkap. Bisa dinavigasi maju-mundur. Tersedia **6 kartu per bab**.
 
 ### ✏️ Tugas I — Kuis Pilihan Ganda
 Soal pilihan ganda (a/b) sebanyak 5 soal per bab. Tersedia feedback langsung (✅ Benar / ❌ Salah) setelah dicek, beserta skor akhir dan pesan motivasi.
@@ -52,8 +71,13 @@ Aktivitas mencocokkan kata/istilah ke kategori yang tepat. Pilih kata di kolom k
 ## 🗂️ Struktur File
 
 ```
-index.html   # File tunggal, semua CSS + JS + konten di dalam satu file
-README.md    # Dokumentasi ini
+index.html       # File tunggal, semua CSS + JS + konten di dalam satu file
+ss_materi.png    # Screenshot halaman materi Bab 3
+ss_flashcard.png # Screenshot fitur Flash Card
+ss_tugas1.png    # Screenshot Tugas I (pilihan ganda)
+ss_tugas2.png    # Screenshot Tugas II (benar/salah)
+ss_bab4.png      # Screenshot Bab 4 (Hidup Jujur)
+README.md        # Dokumentasi ini
 ```
 
 ---
